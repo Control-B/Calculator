@@ -143,7 +143,7 @@ export default function HomePage() {
                     <Input
                       type="text"
                       placeholder="e.g. mortgage on 500k at 6.5%"
-                      className="h-14 pl-16 pr-52 text-lg rounded-full border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-foreground placeholder:text-muted-foreground"
+                      className="h-14 pl-16 pr-[180px] text-lg rounded-full border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-foreground placeholder:text-muted-foreground"
                       value={query}
                       onChange={(e) => setQuery(e.target.value)}
                       data-testid="input-hero-search"
@@ -647,7 +647,7 @@ export default function HomePage() {
               <Input
                 type="text"
                 placeholder="What do you want to calculate?"
-                className="h-16 pl-16 pr-56 text-lg rounded-full border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-white placeholder:text-white/60"
+                className="h-16 pl-16 pr-[180px] text-lg rounded-full border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-white placeholder:text-white/60"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
