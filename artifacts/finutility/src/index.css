@@ -92,16 +92,19 @@
   --color-slate-900: #111318;
   --color-slate-950: #0a0d12;
   
-  /* Gray palette → bright text */
-  --color-gray-500: #e0e6f0;
-  --color-gray-600: #eef2fa;
-  --color-gray-700: #f5f7fc;
-  --color-gray-800: #f8faff;
-  --color-gray-900: #ffffff;
+  /* Gray palette — keep dark for backgrounds */
+  --color-gray-500: #6b7280;
+  --color-gray-600: #1f1f1f;
+  --color-gray-700: #1a1a1a;
+  --color-gray-800: #151515;
+  --color-gray-900: #111111;
   
-  /* Zinc palette → bright text */
+  /* Zinc palette — keep dark for backgrounds, only text values bright */
   --color-zinc-500: #e0e6f0;
-  --color-zinc-900: #ffffff;
+  --color-zinc-600: #1a1a1a;
+  --color-zinc-700: #171717;
+  --color-zinc-800: #141414;
+  --color-zinc-900: #0f0f0f;
 }
 
 /* DARK BY DEFAULT */
