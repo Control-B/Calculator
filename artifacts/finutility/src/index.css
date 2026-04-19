@@ -74,8 +74,8 @@
        - Dark slate values (700–950) → keep dark so bg-slate-950 hero sections stay dark
   */
 
-  /* white → near-black surface */
-  --color-white: #0d0d0d;
+  /* DO NOT remap white - it breaks text-white which should stay white */
+  /* bg-white usages need to be fixed individually in the code */
 
   /* Light → dark surfaces (used for bg-slate-50, bg-slate-100, etc.) */
   --color-slate-50:  #111318;

@@ -118,7 +118,7 @@ export default function CryptoCategory() {
         </section>
 
         {/* Ad */}
-        <div className="bg-white px-4 pt-4 pb-4">
+        <div className="bg-background px-4 pt-4 pb-4">
           <div className="container mx-auto px-4 md:px-8">
             <AdPlaceholder />
           </div>
@@ -260,14 +260,14 @@ export default function CryptoCategory() {
             <form onSubmit={handleSearch} className="max-w-2xl mx-auto relative flex items-center shadow-2xl rounded-full p-2 bg-white/10 backdrop-blur-md border border-white/20">
               <Search className="absolute left-6 h-6 w-6 text-white/70" />
               <Input type="text" placeholder="e.g. crypto profit on 5000 bought at 30000 sold at 45000" className="h-16 pl-16 pr-40 text-lg rounded-full border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-white placeholder:text-white/60" value={query} onChange={(e) => setQuery(e.target.value)} />
-              <Button type="submit" className="absolute right-2 h-14 rounded-full px-8 font-bold bg-white text-fuchsia-700 hover:bg-slate-100 shadow-md text-lg">
+              <Button type="submit" className="absolute right-2 h-14 rounded-full px-8 font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-md text-lg">
                 Go <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </form>
           </div>
         </section>
 
-        <div className="bg-white px-4 pt-4 pb-6">
+        <div className="bg-background px-4 pt-4 pb-6">
           <div className="container mx-auto px-4 md:px-8">
             <AdPlaceholder />
           </div>
