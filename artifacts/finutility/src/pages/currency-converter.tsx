@@ -154,7 +154,7 @@ export default function CurrencyConverter() {
                         min="0" 
                         value={amount} 
                         onChange={(e) => setAmount(e.target.value)} 
-                        className="text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" 
+                        className="text-lg font-medium h-12 rounded-xl bg-black border-white/10 text-white focus-visible:ring-primary" 
                       />
                     </div>
                   </div>
@@ -163,7 +163,7 @@ export default function CurrencyConverter() {
                     <div className="space-y-2 flex-1">
                       <Label className="text-sm font-semibold">From</Label>
                       <Select value={fromCurrency} onValueChange={setFromCurrency}>
-                        <SelectTrigger className="h-12 rounded-xl bg-slate-50 border-slate-200 font-medium text-base">
+                        <SelectTrigger className="h-12 rounded-xl bg-black border-white/10 text-white font-medium text-base">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
@@ -173,7 +173,7 @@ export default function CurrencyConverter() {
                     </div>
                     
                     <div className="pt-6">
-                      <Button variant="ghost" size="icon" onClick={handleSwap} className="rounded-full bg-slate-100 hover:bg-blue-100 hover:text-blue-600 text-slate-500 h-12 w-12 transition-colors">
+                      <Button variant="ghost" size="icon" onClick={handleSwap} className="rounded-full bg-white/10 hover:bg-primary/20 hover:text-primary text-foreground h-12 w-12 border border-white/10 transition-colors">
                         <ArrowRightLeft className="h-5 w-5" />
                       </Button>
                     </div>
@@ -181,7 +181,7 @@ export default function CurrencyConverter() {
                     <div className="space-y-2 flex-1">
                       <Label className="text-sm font-semibold">To</Label>
                       <Select value={toCurrency} onValueChange={setToCurrency}>
-                        <SelectTrigger className="h-12 rounded-xl bg-slate-50 border-slate-200 font-medium text-base">
+                        <SelectTrigger className="h-12 rounded-xl bg-black border-white/10 text-white font-medium text-base">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
@@ -192,7 +192,7 @@ export default function CurrencyConverter() {
                   </div>
 
                   <Button 
-                    className="w-full h-14 text-lg font-bold rounded-xl bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/20 mt-4" 
+                    className="w-full h-14 text-lg font-bold rounded-xl bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20 mt-4" 
                     onClick={handleCalculate}
                   >
                     Convert Now
@@ -206,19 +206,19 @@ export default function CurrencyConverter() {
                 animate={isCalculating ? { scale: [1, 1.02, 1], opacity: [1, 0.8, 1] } : {}}
                 transition={{ duration: 0.3 }}
               >
-                <div className="bg-white rounded-2xl border border-border shadow-sm overflow-hidden p-8 flex flex-col items-center justify-center text-center h-full min-h-[300px]">
-                  <h3 className="text-lg font-medium text-slate-500 uppercase tracking-wider mb-2">
-                    {amount || 0} <span className="font-bold text-slate-900">{fromCurrency}</span> equals
+                <div className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden p-8 flex flex-col items-center justify-center text-center h-full min-h-[300px]">
+                  <h3 className="text-lg font-medium text-muted-foreground uppercase tracking-wider mb-2">
+                    {amount || 0} <span className="font-bold text-foreground">{fromCurrency}</span> equals
                   </h3>
-                  <div className="text-5xl md:text-7xl font-black text-blue-600 break-words my-4">
+                  <div className="text-5xl md:text-7xl font-black text-primary break-words my-4">
                     {results.converted.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
                   </div>
-                  <div className="text-2xl font-bold text-slate-900 mb-6">
+                  <div className="text-2xl font-bold text-foreground mb-6">
                     {toCurrency}
                   </div>
                   
-                  <div className="bg-slate-50 px-6 py-3 rounded-xl border border-slate-100">
-                    <p className="text-sm font-medium text-slate-600">
+                  <div className="bg-secondary px-6 py-3 rounded-xl border border-border">
+                    <p className="text-sm font-medium text-muted-foreground">
                       1 {fromCurrency} = {results.exchangeRate.toFixed(6)} {toCurrency}
                     </p>
                   </div>
@@ -236,8 +236,8 @@ export default function CurrencyConverter() {
           <div className="my-8">
             <AIInsightCard content={insight} />
             <div className="flex flex-wrap gap-2 mt-4 ml-2">
-              <span className="text-sm font-medium text-slate-500 flex items-center mr-2">Related tools:</span>
-              <a href="/crypto-profit-calculator" className="text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-full transition-colors">Crypto Profit</a>
+              <span className="text-sm font-medium text-muted-foreground flex items-center mr-2">Related tools:</span>
+              <a href="/crypto-profit-calculator" className="text-xs font-semibold bg-secondary text-foreground hover:bg-accent px-3 py-1.5 rounded-full transition-colors border border-border">Crypto Profit</a>
             </div>
           </div>
 
@@ -246,17 +246,17 @@ export default function CurrencyConverter() {
             {/* Section 5: How the Math Works */}
             <div className="lg:col-span-7 space-y-8">
               <div>
-                <h2 className="text-3xl font-black text-slate-900 mb-6">Understanding Exchange Rates</h2>
-                <div className="prose prose-blue max-w-none text-slate-600 leading-relaxed">
+                <h2 className="text-3xl font-black text-foreground mb-6">Understanding Exchange Rates</h2>
+                <div className="prose prose-invert max-w-none text-muted-foreground leading-relaxed">
                   <p>An exchange rate is the rate at which one currency will be exchanged for another. It is also regarded as the value of one country's currency in relation to another currency.</p>
                   
-                  <div className="my-8 bg-slate-900 text-slate-100 p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden">
+                  <div className="my-8 bg-black text-foreground p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden border border-white/10">
                     <div className="absolute top-0 right-0 bg-slate-800 px-3 py-1 text-xs font-bold rounded-bl-lg text-slate-400">FORMULA</div>
                     <div className="mb-4 text-blue-400 font-bold text-lg">Target Amount = Base Amount × (1 / BaseRate) × TargetRate</div>
                     <p className="opacity-90">Where rates are measured against a common denominator (like USD).</p>
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Why do rates fluctuate?</h3>
+                  <h3 className="text-xl font-bold text-foreground mt-8 mb-4">Why do rates fluctuate?</h3>
                   <p>Currencies are traded on the foreign exchange market (FOREX), which is open 24 hours a day. Supply and demand dictate prices. Factors include:</p>
                   <ul className="space-y-2">
                     <li><strong>Inflation differentials:</strong> Countries with consistently lower inflation exhibit rising currency value.</li>
@@ -271,7 +271,7 @@ export default function CurrencyConverter() {
             {/* Section 6: FAQ & Related */}
             <div className="lg:col-span-5 space-y-12">
               <div>
-                <h2 className="text-2xl font-black text-slate-900 mb-6">Frequently Asked Questions</h2>
+                <h2 className="text-2xl font-black text-foreground mb-6">Frequently Asked Questions</h2>
                 <FAQAccordion items={[
                   {
                     question: "Is this the rate my bank will give me?",
@@ -289,7 +289,7 @@ export default function CurrencyConverter() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-black text-slate-900 mb-6">Explore Related Tools</h2>
+                <h2 className="text-2xl font-black text-foreground mb-6">Explore Related Tools</h2>
                 <div className="grid gap-4">
                   <ToolCard 
                     title="Crypto Profit Calculator" 

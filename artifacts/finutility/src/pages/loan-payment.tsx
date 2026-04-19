@@ -167,13 +167,13 @@ export default function LoanPaymentCalculator() {
                     <Label htmlFor="loanAmount" className="text-sm font-semibold">Loan Amount</Label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <span className="text-slate-500 font-medium">$</span>
+                        <span className="text-muted-foreground font-medium">$</span>
                       </div>
                       <Input 
                         id="loanAmount" 
                         type="number" 
                         min="0" 
-                        className="pl-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" 
+                        className="pl-8 text-lg font-medium h-12 rounded-xl bg-black border-white/10 text-white focus-visible:ring-primary" 
                         value={loanAmount} 
                         onChange={(e) => setLoanAmount(e.target.value)} 
                       />
@@ -186,12 +186,12 @@ export default function LoanPaymentCalculator() {
                         id="rate" 
                         type="number" 
                         step="0.1" 
-                        className="pr-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" 
+                        className="pr-8 text-lg font-medium h-12 rounded-xl bg-black border-white/10 text-white focus-visible:ring-primary" 
                         value={rate} 
                         onChange={(e) => setRate(e.target.value)} 
                       />
                       <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                        <span className="text-slate-500 font-medium">%</span>
+                        <span className="text-muted-foreground font-medium">%</span>
                       </div>
                     </div>
                   </div>
@@ -201,19 +201,19 @@ export default function LoanPaymentCalculator() {
                       id="termMonths" 
                       type="number" 
                       min="1" 
-                      className="text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" 
+                      className="text-lg font-medium h-12 rounded-xl bg-black border-white/10 text-white focus-visible:ring-primary" 
                       value={termMonths} 
                       onChange={(e) => setTermMonths(e.target.value)} 
                     />
                     <div className="flex gap-2 mt-3">
-                      <Button type="button" size="sm" variant={termMonths === "36" ? "default" : "outline"} onClick={() => setTermMonths("36")} className="flex-1 h-10 rounded-lg font-bold bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:border-blue-600 transition-colors" data-state={termMonths === "36" ? "active" : "inactive"}>36m (3y)</Button>
-                      <Button type="button" size="sm" variant={termMonths === "60" ? "default" : "outline"} onClick={() => setTermMonths("60")} className="flex-1 h-10 rounded-lg font-bold bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:border-blue-600 transition-colors" data-state={termMonths === "60" ? "active" : "inactive"}>60m (5y)</Button>
-                      <Button type="button" size="sm" variant={termMonths === "72" ? "default" : "outline"} onClick={() => setTermMonths("72")} className="flex-1 h-10 rounded-lg font-bold bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:border-blue-600 transition-colors" data-state={termMonths === "72" ? "active" : "inactive"}>72m (6y)</Button>
+                      <Button type="button" size="sm" onClick={() => setTermMonths("36")} className={`flex-1 h-10 rounded-lg font-bold border transition-colors ${termMonths === "36" ? "bg-primary text-white border-primary" : "bg-secondary text-foreground border-border hover:bg-accent"}`}>36m (3y)</Button>
+                      <Button type="button" size="sm" onClick={() => setTermMonths("60")} className={`flex-1 h-10 rounded-lg font-bold border transition-colors ${termMonths === "60" ? "bg-primary text-white border-primary" : "bg-secondary text-foreground border-border hover:bg-accent"}`}>60m (5y)</Button>
+                      <Button type="button" size="sm" onClick={() => setTermMonths("72")} className={`flex-1 h-10 rounded-lg font-bold border transition-colors ${termMonths === "72" ? "bg-primary text-white border-primary" : "bg-secondary text-foreground border-border hover:bg-accent"}`}>72m (6y)</Button>
                     </div>
                   </div>
                   
                   <Button 
-                    className="w-full h-14 text-lg font-bold rounded-xl bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/20" 
+                    className="w-full h-14 text-lg font-bold rounded-xl bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20" 
                     onClick={handleCalculate}
                   >
                     Calculate Payment
@@ -246,23 +246,23 @@ export default function LoanPaymentCalculator() {
 
               {/* Section 3: Charts & Visualization */}
               {scheduleData.length > 0 && (
-                <div className="bg-white rounded-2xl border border-border shadow-sm overflow-hidden mt-6">
-                  <div className="p-6 border-b border-border bg-slate-50">
-                    <h3 className="font-bold text-lg">Yearly Balance Summary</h3>
+                <div className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden mt-6">
+                  <div className="p-6 border-b border-border bg-secondary">
+                    <h3 className="font-bold text-lg text-foreground">Yearly Balance Summary</h3>
                   </div>
                   <div className="max-h-[400px] overflow-auto">
                     <Table>
-                      <TableHeader className="bg-white sticky top-0 shadow-sm">
+                      <TableHeader className="bg-card sticky top-0 shadow-sm">
                         <TableRow>
-                          <TableHead>Year</TableHead>
-                          <TableHead className="text-right">Remaining Balance</TableHead>
+                          <TableHead className="text-muted-foreground">Year</TableHead>
+                          <TableHead className="text-right text-muted-foreground">Remaining Balance</TableHead>
                         </TableRow>
                       </TableHeader>
                       <TableBody>
                         {scheduleData.map((row) => (
-                          <TableRow key={row.year}>
-                            <TableCell className="font-medium text-slate-900">Year {row.year} (Mo {row.month})</TableCell>
-                            <TableCell className="text-right font-bold text-slate-900">${row.balance.toLocaleString(undefined, {maximumFractionDigits:0})}</TableCell>
+                          <TableRow key={row.year} className="border-border">
+                            <TableCell className="font-medium text-foreground">Year {row.year} (Mo {row.month})</TableCell>
+                            <TableCell className="text-right font-bold text-foreground">${row.balance.toLocaleString(undefined, {maximumFractionDigits:0})}</TableCell>
                           </TableRow>
                         ))}
                       </TableBody>
@@ -279,9 +279,9 @@ export default function LoanPaymentCalculator() {
           <div className="my-8">
             <AIInsightCard content={insight} />
             <div className="flex flex-wrap gap-2 mt-4 ml-2">
-              <span className="text-sm font-medium text-slate-500 flex items-center mr-2">Related tools:</span>
-              <a href="/mortgage-calculator" className="text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-full transition-colors">Mortgage Calculator</a>
-              <a href="/savings-goal-calculator" className="text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-full transition-colors">Savings Goal</a>
+              <span className="text-sm font-medium text-muted-foreground flex items-center mr-2">Related tools:</span>
+              <a href="/mortgage-calculator" className="text-xs font-semibold bg-secondary text-foreground hover:bg-accent px-3 py-1.5 rounded-full transition-colors border border-border">Mortgage Calculator</a>
+              <a href="/savings-goal-calculator" className="text-xs font-semibold bg-secondary text-foreground hover:bg-accent px-3 py-1.5 rounded-full transition-colors border border-border">Savings Goal</a>
             </div>
           </div>
 
@@ -290,11 +290,11 @@ export default function LoanPaymentCalculator() {
             {/* Section 5: How the Math Works */}
             <div className="lg:col-span-7 space-y-8">
               <div>
-                <h2 className="text-3xl font-black text-slate-900 mb-6">How Loan Payments Are Calculated</h2>
-                <div className="prose prose-blue max-w-none text-slate-600 leading-relaxed">
+                <h2 className="text-3xl font-black text-foreground mb-6">How Loan Payments Are Calculated</h2>
+                <div className="prose prose-invert max-w-none text-muted-foreground leading-relaxed">
                   <p>Most auto, personal, and student loans use an amortized payment schedule. This means your monthly payment is fixed, but the amount going toward interest vs. principal changes over time.</p>
                   
-                  <div className="my-8 bg-slate-900 text-slate-100 p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden">
+                  <div className="my-8 bg-black text-foreground p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden border border-white/10">
                     <div className="absolute top-0 right-0 bg-slate-800 px-3 py-1 text-xs font-bold rounded-bl-lg text-slate-400">FORMULA</div>
                     <div className="mb-4 text-blue-400 font-bold text-lg">M = P[r(1+r)^n]/[(1+r)^n-1]</div>
                     <ul className="space-y-2 opacity-90 list-none pl-0">
@@ -305,7 +305,7 @@ export default function LoanPaymentCalculator() {
                     </ul>
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">The Impact of the Loan Term</h3>
+                  <h3 className="text-xl font-bold text-foreground mt-8 mb-4">The Impact of the Loan Term</h3>
                   <p>Choosing a longer loan term (like 72 months instead of 48 months for a car loan) will lower your monthly payment. However, because you are keeping the debt longer, you will pay significantly more in total interest. If possible, opt for the shortest term you can afford to minimize interest costs.</p>
                 </div>
               </div>
@@ -314,7 +314,7 @@ export default function LoanPaymentCalculator() {
             {/* Section 6: FAQ & Related */}
             <div className="lg:col-span-5 space-y-12">
               <div>
-                <h2 className="text-2xl font-black text-slate-900 mb-6">Frequently Asked Questions</h2>
+                <h2 className="text-2xl font-black text-foreground mb-6">Frequently Asked Questions</h2>
                 <FAQAccordion items={[
                   {
                     question: "Can I pay off my loan early?",
@@ -332,7 +332,7 @@ export default function LoanPaymentCalculator() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-black text-slate-900 mb-6">Explore Related Tools</h2>
+                <h2 className="text-2xl font-black text-foreground mb-6">Explore Related Tools</h2>
                 <div className="grid gap-4">
                   <ToolCard 
                     title="Mortgage Calculator" 
