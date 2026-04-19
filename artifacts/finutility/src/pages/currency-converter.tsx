@@ -89,8 +89,8 @@ export default function CurrencyConverter() {
 
       <main className="flex-1">
         {/* Section 1: Hero */}
-        <section className="relative overflow-hidden bg-slate-950 text-white pt-20 pb-24 border-b border-border">
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-blue-950 z-0"></div>
+        <section className="relative overflow-hidden bg-background text-foreground pt-20 pb-24 border-b border-border">
+          <div className="absolute inset-0 bg-gradient-to-b from-background to-primary/5 z-0"></div>
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay z-0"></div>
           
           <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -100,27 +100,27 @@ export default function CurrencyConverter() {
                 <p className="text-lg text-slate-300 mb-8 max-w-xl">Convert between major global currencies instantly with live-equivalent educational rates.</p>
                 
                 <div className="flex flex-wrap gap-3 mb-8">
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <Zap className="h-4 w-4 text-yellow-400" /> Instant results
                   </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <Clock className="h-4 w-4 text-blue-400" /> Financial Insights
                   </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <ShieldCheck className="h-4 w-4 text-green-400" /> Free forever
                   </div>
                 </div>
 
-                <form onSubmit={handleSearch} className="max-w-xl relative flex items-center bg-white/10 p-1.5 rounded-full backdrop-blur-md border border-white/20">
-                  <Search className="absolute left-5 h-5 w-5 text-white/50" />
+                <form onSubmit={handleSearch} className="max-w-xl relative flex items-center bg-foreground/10 p-1.5 rounded-full backdrop-blur-md border border-foreground/20">
+                  <Search className="absolute left-5 h-5 w-5 text-muted-foreground" />
                   <Input
                     type="text"
                     placeholder="e.g. convert 500 USD to GBP"
-                    className="h-12 pl-14 pr-32 text-base rounded-full bg-transparent border-0 text-white placeholder:text-white/50 focus-visible:ring-0"
+                    className="h-12 pl-14 pr-32 text-base rounded-full bg-transparent border-0 text-foreground placeholder:text-muted-foreground focus-visible:ring-0"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                   />
-                  <Button type="submit" className="absolute right-1.5 h-10 rounded-full px-6 bg-blue-600 hover:bg-blue-700 text-white">
+                  <Button type="submit" className="absolute right-1.5 h-10 rounded-full px-6 bg-primary hover:bg-primary/90 text-primary-foreground">
                     Apply
                   </Button>
                 </form>
@@ -224,7 +224,7 @@ export default function CurrencyConverter() {
                   </div>
                 </div>
               </motion.div>
-              <p className="text-xs text-slate-400 mt-4 text-center font-medium">
+              <p className="text-xs text-muted-foreground mt-4 text-center font-medium">
                 Rates are for educational purposes. Real-world rates may vary by provider.
               </p>
             </div>
@@ -250,8 +250,8 @@ export default function CurrencyConverter() {
                 <div className="prose prose-invert max-w-none text-muted-foreground leading-relaxed">
                   <p>An exchange rate is the rate at which one currency will be exchanged for another. It is also regarded as the value of one country's currency in relation to another currency.</p>
                   
-                  <div className="my-8 bg-black text-foreground p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden border border-white/10">
-                    <div className="absolute top-0 right-0 bg-slate-800 px-3 py-1 text-xs font-bold rounded-bl-lg text-slate-400">FORMULA</div>
+                  <div className="my-8 bg-card border border-border text-foreground p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden">
+                    <div className="absolute top-0 right-0 bg-secondary px-3 py-1 text-xs font-bold rounded-bl-lg text-muted-foreground">FORMULA</div>
                     <div className="mb-4 text-blue-400 font-bold text-lg">Target Amount = Base Amount × (1 / BaseRate) × TargetRate</div>
                     <p className="opacity-90">Where rates are measured against a common denominator (like USD).</p>
                   </div>

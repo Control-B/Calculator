@@ -66,23 +66,31 @@
 
   /* Remap Tailwind's built-in slate/white/black palette to dark-theme equivalents.
      This fixes all hardcoded bg-slate-*, bg-white, text-slate-* classes across
-     every page without having to edit each file individually. */
+     every page without having to edit each file individually.
+
+     Strategy:
+       - Light slate values (50–200) → very dark surfaces (used as bg in inputs/cards)
+       - Mid slate values (300–600)  → mid-tone text colors (muted, body, labels)
+       - Dark slate values (700–950) → keep dark so bg-slate-950 hero sections stay dark
+  */
 
   /* white → near-black surface */
   --color-white: #0d0d0d;
 
-  /* slate — inverted so light values become dark surfaces, dark become light text */
+  /* Light → dark surfaces */
   --color-slate-50:  #111318;
   --color-slate-100: #161a22;
   --color-slate-200: #1e2330;
+  /* Mid → muted text tones */
   --color-slate-300: #8a95aa;
   --color-slate-400: #9aa3b8;
   --color-slate-500: #8894ac;
   --color-slate-600: #c2cad8;
   --color-slate-700: #d0d7e4;
-  --color-slate-800: #dde3ee;
-  --color-slate-900: #edf0f7;
-  --color-slate-950: #f5f7fc;
+  /* Dark → keep dark (hero backgrounds, formula blocks, etc.) */
+  --color-slate-800: #1a1f2c;
+  --color-slate-900: #111318;
+  --color-slate-950: #0a0d12;
 }
 
 /* DARK BY DEFAULT */

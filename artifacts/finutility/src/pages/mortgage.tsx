@@ -94,8 +94,8 @@ export default function MortgageCalculator() {
 
       <main className="flex-1">
         {/* Section 1: Hero */}
-        <section className="relative overflow-hidden bg-slate-950 text-white pt-20 pb-24 border-b border-border">
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-blue-950 z-0"></div>
+        <section className="relative overflow-hidden bg-background text-foreground pt-20 pb-24 border-b border-border">
+          <div className="absolute inset-0 bg-gradient-to-b from-background to-primary/5 z-0"></div>
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay z-0"></div>
           
           <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -105,27 +105,27 @@ export default function MortgageCalculator() {
                 <p className="text-lg text-slate-300 mb-8 max-w-xl">Estimate your monthly payments, including taxes, insurance, and HOA fees to see the true cost of your home.</p>
                 
                 <div className="flex flex-wrap gap-3 mb-8">
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <Zap className="h-4 w-4 text-yellow-400" /> Instant results
                   </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <Clock className="h-4 w-4 text-blue-400" /> Financial Insights
                   </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <ShieldCheck className="h-4 w-4 text-green-400" /> Free forever
                   </div>
                 </div>
 
-                <form onSubmit={handleSearch} className="max-w-xl relative flex items-center bg-white/10 p-1.5 rounded-full backdrop-blur-md border border-white/20">
-                  <Search className="absolute left-5 h-5 w-5 text-white/50" />
+                <form onSubmit={handleSearch} className="max-w-xl relative flex items-center bg-foreground/10 p-1.5 rounded-full backdrop-blur-md border border-foreground/20">
+                  <Search className="absolute left-5 h-5 w-5 text-muted-foreground" />
                   <Input
                     type="text"
                     placeholder="e.g. mortgage on 450k with 10% down at 7%"
-                    className="h-12 pl-14 pr-32 text-base rounded-full bg-transparent border-0 text-white placeholder:text-white/50 focus-visible:ring-0"
+                    className="h-12 pl-14 pr-32 text-base rounded-full bg-transparent border-0 text-foreground placeholder:text-muted-foreground focus-visible:ring-0"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                   />
-                  <Button type="submit" className="absolute right-1.5 h-10 rounded-full px-6 bg-blue-600 hover:bg-blue-700 text-white">
+                  <Button type="submit" className="absolute right-1.5 h-10 rounded-full px-6 bg-primary hover:bg-primary/90 text-primary-foreground">
                     Apply
                   </Button>
                 </form>
@@ -154,7 +154,7 @@ export default function MortgageCalculator() {
                     <Label htmlFor="homePrice" className="text-sm font-semibold">Home Price</Label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <span className="text-slate-500 font-medium">$</span>
+                        <span className="text-muted-foreground font-medium">$</span>
                       </div>
                       <Input 
                         id="homePrice" 
@@ -252,7 +252,7 @@ export default function MortgageCalculator() {
                   </div>
                   
                   <Button 
-                    className="w-full h-14 text-lg font-bold rounded-xl bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/20" 
+                    className="w-full h-14 text-lg font-bold rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20" 
                     onClick={handleCalculate}
                   >
                     Calculate Payment
@@ -274,7 +274,7 @@ export default function MortgageCalculator() {
                 <ResultCard 
                   title="Principal Amount" 
                   value={`$${(Number(homePrice) - downPaymentAmount).toLocaleString(undefined, {maximumFractionDigits:0})}`}
-                  valueColorClass="text-slate-900"
+                  valueColorClass="text-foreground"
                 />
                 <ResultCard 
                   title="Total Interest" 
@@ -353,22 +353,22 @@ export default function MortgageCalculator() {
             {/* Section 5: How the Math Works */}
             <div className="lg:col-span-7 space-y-8">
               <div>
-                <h2 className="text-3xl font-black text-slate-900 mb-6">Understanding Your Mortgage</h2>
-                <div className="prose prose-blue max-w-none text-slate-600 leading-relaxed">
+                <h2 className="text-3xl font-black text-foreground mb-6">Understanding Your Mortgage</h2>
+                <div className="prose prose-invert max-w-none text-muted-foreground leading-relaxed">
                   <p>A mortgage payment consists of several parts, commonly referred to as <strong>PITI</strong>: Principal, Interest, Taxes, and Insurance.</p>
                   
-                  <div className="my-8 bg-slate-900 text-slate-100 p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 bg-slate-800 px-3 py-1 text-xs font-bold rounded-bl-lg text-slate-400">FORMULA</div>
+                  <div className="my-8 bg-card border border-border text-foreground p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden">
+                    <div className="absolute top-0 right-0 bg-secondary px-3 py-1 text-xs font-bold rounded-bl-lg text-muted-foreground">FORMULA</div>
                     <div className="mb-4 text-blue-400 font-bold text-lg">M = P[r(1+r)^n]/[(1+r)^n-1]</div>
                     <ul className="space-y-2 opacity-90 list-none pl-0">
-                      <li><strong className="text-white">M</strong> = Total monthly payment</li>
-                      <li><strong className="text-white">P</strong> = Principal loan amount</li>
-                      <li><strong className="text-white">r</strong> = Monthly interest rate</li>
-                      <li><strong className="text-white">n</strong> = Number of payments (months)</li>
+                      <li><strong className="text-primary">M</strong> = Total monthly payment</li>
+                      <li><strong className="text-primary">P</strong> = Principal loan amount</li>
+                      <li><strong className="text-primary">r</strong> = Monthly interest rate</li>
+                      <li><strong className="text-primary">n</strong> = Number of payments (months)</li>
                     </ul>
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Key concepts to remember:</h3>
+                  <h3 className="text-xl font-bold text-foreground mt-8 mb-4">Key concepts to remember:</h3>
                   <ul className="space-y-3">
                     <li><strong>Principal and Interest:</strong> In the early years of a mortgage, the majority of your payment goes toward interest. Over time, as the principal balance decreases, more of your payment goes toward paying down the principal (amortization).</li>
                     <li><strong>Taxes and Insurance:</strong> Most lenders require you to pay property taxes and home insurance into an escrow account monthly. They will then pay these bills on your behalf when they are due.</li>
@@ -381,7 +381,7 @@ export default function MortgageCalculator() {
             {/* Section 6: FAQ & Related */}
             <div className="lg:col-span-5 space-y-12">
               <div>
-                <h2 className="text-2xl font-black text-slate-900 mb-6">Frequently Asked Questions</h2>
+                <h2 className="text-2xl font-black text-foreground mb-6">Frequently Asked Questions</h2>
                 <FAQAccordion items={[
                   {
                     question: "Should I choose a 15-year or 30-year mortgage?",
@@ -403,7 +403,7 @@ export default function MortgageCalculator() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-black text-slate-900 mb-6">Explore Related Tools</h2>
+                <h2 className="text-2xl font-black text-foreground mb-6">Explore Related Tools</h2>
                 <div className="grid gap-4">
                   <ToolCard 
                     title="Loan Payment" 

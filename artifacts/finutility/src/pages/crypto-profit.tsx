@@ -82,8 +82,8 @@ export default function CryptoProfitCalculator() {
 
       <main className="flex-1">
         {/* Section 1: Hero */}
-        <section className="relative overflow-hidden bg-slate-950 text-white pt-20 pb-24 border-b border-border">
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-blue-950 z-0"></div>
+        <section className="relative overflow-hidden bg-background text-foreground pt-20 pb-24 border-b border-border">
+          <div className="absolute inset-0 bg-gradient-to-b from-background to-primary/5 z-0"></div>
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay z-0"></div>
           
           <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -93,27 +93,27 @@ export default function CryptoProfitCalculator() {
                 <p className="text-lg text-slate-300 mb-8 max-w-xl">Calculate your true net profit, ROI, and break-even price for cryptocurrency trades after fees.</p>
                 
                 <div className="flex flex-wrap gap-3 mb-8">
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <Zap className="h-4 w-4 text-yellow-400" /> Instant results
                   </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <Clock className="h-4 w-4 text-blue-400" /> Financial Insights
                   </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <ShieldCheck className="h-4 w-4 text-green-400" /> Free forever
                   </div>
                 </div>
 
                 <form onSubmit={handleSearch} className="max-w-xl relative flex items-center bg-white/10 p-1.5 rounded-full backdrop-blur-md border border-white/20">
-                  <Search className="absolute left-5 h-5 w-5 text-white/50" />
+                  <Search className="absolute left-5 h-5 w-5 text-muted-foreground" />
                   <Input
                     type="text"
                     placeholder="e.g. bought 2 ETH at 2000 sold at 3500"
-                    className="h-12 pl-14 pr-32 text-base rounded-full bg-transparent border-0 text-white placeholder:text-white/50 focus-visible:ring-0"
+                    className="h-12 pl-14 pr-32 text-base rounded-full bg-transparent border-0 text-foreground placeholder:text-muted-foreground focus-visible:ring-0"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                   />
-                  <Button type="submit" className="absolute right-1.5 h-10 rounded-full px-6 bg-orange-500 hover:bg-orange-600 text-white">
+                  <Button type="submit" className="absolute right-1.5 h-10 rounded-full px-6 bg-primary hover:bg-primary/90 text-primary-foreground">
                     Apply
                   </Button>
                 </form>
@@ -165,14 +165,14 @@ export default function CryptoProfitCalculator() {
                     <div className="space-y-2">
                       <Label htmlFor="buyPrice" className="text-sm font-semibold">Buy Price</Label>
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-slate-500">$</span></div>
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-muted-foreground">$</span></div>
                         <Input id="buyPrice" type="number" min="0" step="any" className="pl-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-orange-500 focus-visible:border-orange-500" value={buyPrice} onChange={(e) => setBuyPrice(e.target.value)} />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="sellPrice" className="text-sm font-semibold">Sell Price</Label>
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-slate-500">$</span></div>
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-muted-foreground">$</span></div>
                         <Input id="sellPrice" type="number" min="0" step="any" className="pl-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-orange-500 focus-visible:border-orange-500" value={sellPrice} onChange={(e) => setSellPrice(e.target.value)} />
                       </div>
                     </div>
@@ -187,7 +187,7 @@ export default function CryptoProfitCalculator() {
                   </div>
                   
                   <Button 
-                    className="w-full h-14 text-lg font-bold rounded-xl bg-orange-500 hover:bg-orange-600 shadow-lg shadow-orange-500/20" 
+                    className="w-full h-14 text-lg font-bold rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20" 
                     onClick={handleCalculate}
                   >
                     Calculate Profit
@@ -233,8 +233,8 @@ export default function CryptoProfitCalculator() {
                   </div>
                   <div className="flex justify-between items-center pt-4 bg-orange-500/10 p-4 rounded-xl mt-4">
                     <div className="flex flex-col">
-                      <span className="text-slate-900 font-bold">Break-even Price</span>
-                      <span className="text-xs text-slate-500 font-medium">Sell above this to profit</span>
+                      <span className="text-foreground font-bold">Break-even Price</span>
+                      <span className="text-xs text-muted-foreground font-medium">Sell above this to profit</span>
                     </div>
                     <span className="font-black text-2xl text-orange-600">${results.breakEven.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 6})} <span className="text-base text-orange-400 font-bold uppercase">/ {coin || 'coin'}</span></span>
                   </div>
@@ -259,21 +259,21 @@ export default function CryptoProfitCalculator() {
             {/* Section 5: How the Math Works */}
             <div className="lg:col-span-7 space-y-8">
               <div>
-                <h2 className="text-3xl font-black text-slate-900 mb-6">Calculating Crypto Profit</h2>
-                <div className="prose prose-blue max-w-none text-slate-600 leading-relaxed">
+                <h2 className="text-3xl font-black text-foreground mb-6">Calculating Crypto Profit</h2>
+                <div className="prose prose-invert max-w-none text-muted-foreground leading-relaxed">
                   <p>Trading cryptocurrencies involves extreme volatility. Knowing your true numbers is critical to risk management.</p>
                   
-                  <div className="my-8 bg-slate-900 text-slate-100 p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 bg-slate-800 px-3 py-1 text-xs font-bold rounded-bl-lg text-slate-400">FORMULA</div>
+                  <div className="my-8 bg-card border border-border text-foreground p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden">
+                    <div className="absolute top-0 right-0 bg-secondary px-3 py-1 text-xs font-bold rounded-bl-lg text-muted-foreground">FORMULA</div>
                     <div className="mb-4 text-blue-400 font-bold text-lg">Net Profit = [(Sell Price - Buy Price) × Qty] - Fees</div>
                     <div className="mb-4 text-orange-400 font-bold text-lg">ROI = (Net Profit / Initial Investment) × 100</div>
                     <p className="opacity-90">Where Initial Investment = Buy Price × Qty</p>
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Why Break-even Matters</h3>
+                  <h3 className="text-xl font-bold text-foreground mt-8 mb-4">Why Break-even Matters</h3>
                   <p>Your break-even price is the price point at which your trade results in exactly $0 profit and $0 loss. It is simply your buy price plus the total fees divided by the quantity you bought. Knowing this number helps you set realistic stop-loss and take-profit orders on your exchange.</p>
                   
-                  <h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Don't Ignore the Fees</h3>
+                  <h3 className="text-xl font-bold text-foreground mt-6 mb-4">{"Don't Ignore the Fees"}</h3>
                   <p>Many new traders forget to account for fees. Centralized exchanges charge a percentage on both buys and sells. Decentralized exchanges require you to pay network gas fees, which can sometimes be extremely high depending on network congestion.</p>
                 </div>
               </div>
@@ -282,7 +282,7 @@ export default function CryptoProfitCalculator() {
             {/* Section 6: FAQ & Related */}
             <div className="lg:col-span-5 space-y-12">
               <div>
-                <h2 className="text-2xl font-black text-slate-900 mb-6">Frequently Asked Questions</h2>
+                <h2 className="text-2xl font-black text-foreground mb-6">Frequently Asked Questions</h2>
                 <FAQAccordion items={[
                   {
                     question: "What is ROI?",
@@ -300,7 +300,7 @@ export default function CryptoProfitCalculator() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-black text-slate-900 mb-6">Explore Related Tools</h2>
+                <h2 className="text-2xl font-black text-foreground mb-6">Explore Related Tools</h2>
                 <div className="grid gap-4">
                   <ToolCard 
                     title="Currency Converter" 

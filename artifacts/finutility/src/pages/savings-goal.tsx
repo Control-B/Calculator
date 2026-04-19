@@ -106,8 +106,8 @@ export default function SavingsGoalCalculator() {
 
       <main className="flex-1">
         {/* Section 1: Hero */}
-        <section className="relative overflow-hidden bg-slate-950 text-white pt-20 pb-24 border-b border-border">
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-blue-950 z-0"></div>
+        <section className="relative overflow-hidden bg-background text-foreground pt-20 pb-24 border-b border-border">
+          <div className="absolute inset-0 bg-gradient-to-b from-background to-primary/5 z-0"></div>
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay z-0"></div>
           
           <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -117,27 +117,27 @@ export default function SavingsGoalCalculator() {
                 <p className="text-lg text-slate-300 mb-8 max-w-xl">Determine how much you need to save or exactly how long it will take to reach your financial target.</p>
                 
                 <div className="flex flex-wrap gap-3 mb-8">
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <Zap className="h-4 w-4 text-yellow-400" /> Instant results
                   </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <Clock className="h-4 w-4 text-blue-400" /> Financial Insights
                   </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <ShieldCheck className="h-4 w-4 text-green-400" /> Free forever
                   </div>
                 </div>
 
-                <form onSubmit={handleSearch} className="max-w-xl relative flex items-center bg-white/10 p-1.5 rounded-full backdrop-blur-md border border-white/20">
-                  <Search className="absolute left-5 h-5 w-5 text-white/50" />
+                <form onSubmit={handleSearch} className="max-w-xl relative flex items-center bg-foreground/10 p-1.5 rounded-full backdrop-blur-md border border-foreground/20">
+                  <Search className="absolute left-5 h-5 w-5 text-muted-foreground" />
                   <Input
                     type="text"
                     placeholder="What do you want to calculate?"
-                    className="h-12 pl-14 pr-32 text-base rounded-full bg-transparent border-0 text-white placeholder:text-white/50 focus-visible:ring-0"
+                    className="h-12 pl-14 pr-32 text-base rounded-full bg-transparent border-0 text-foreground placeholder:text-muted-foreground focus-visible:ring-0"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                   />
-                  <Button type="submit" className="absolute right-1.5 h-10 rounded-full px-6 bg-blue-600 hover:bg-blue-700 text-white">
+                  <Button type="submit" className="absolute right-1.5 h-10 rounded-full px-6 bg-primary hover:bg-primary/90 text-primary-foreground">
                     Apply
                   </Button>
                 </form>
@@ -147,7 +147,7 @@ export default function SavingsGoalCalculator() {
                 <img 
                   src="/images/savings.png" 
                   alt="Savings jar with house" 
-                  className="w-full max-w-md rounded-2xl shadow-2xl border border-white/10 object-cover aspect-4/3 bg-white"
+                  className="w-full max-w-md rounded-2xl shadow-2xl border border-white/10 object-cover aspect-4/3 bg-card"
                 />
               </div>
             </div>
@@ -180,14 +180,14 @@ export default function SavingsGoalCalculator() {
                   <div className="space-y-2">
                     <Label htmlFor="targetAmount" className="text-sm font-semibold">Target Goal Amount</Label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-slate-500 font-medium">$</span></div>
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-muted-foreground font-medium">$</span></div>
                       <Input id="targetAmount" type="number" min="0" className="pl-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary focus-visible:border-primary" value={targetAmount} onChange={(e) => setTargetAmount(e.target.value)} />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="currentSavings" className="text-sm font-semibold">Current Savings</Label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-slate-500 font-medium">$</span></div>
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-muted-foreground font-medium">$</span></div>
                       <Input id="currentSavings" type="number" min="0" className="pl-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary focus-visible:border-primary" value={currentSavings} onChange={(e) => setCurrentSavings(e.target.value)} />
                     </div>
                   </div>
@@ -216,7 +216,7 @@ export default function SavingsGoalCalculator() {
                   )}
 
                   <Button 
-                    className="w-full h-14 text-lg font-bold rounded-xl bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/20" 
+                    className="w-full h-14 text-lg font-bold rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20" 
                     onClick={handleCalculate}
                   >
                     Calculate Target
@@ -241,7 +241,6 @@ export default function SavingsGoalCalculator() {
                     <ResultCard 
                       title="Target Amount" 
                       value={`$${Number(targetAmount).toLocaleString()}`}
-                      valueColorClass="text-slate-900"
                     />
                   </>
                 ) : (
@@ -253,7 +252,6 @@ export default function SavingsGoalCalculator() {
                     <ResultCard 
                       title="Target Amount" 
                       value={`$${Number(targetAmount).toLocaleString()}`}
-                      valueColorClass="text-slate-900"
                     />
                   </>
                 )}
@@ -300,23 +298,23 @@ export default function SavingsGoalCalculator() {
             {/* Section 5: How the Math Works */}
             <div className="lg:col-span-7 space-y-8">
               <div>
-                <h2 className="text-3xl font-black text-slate-900 mb-6">Reaching Your Savings Goals</h2>
-                <div className="prose prose-blue max-w-none text-slate-600 leading-relaxed">
+                <h2 className="text-3xl font-black text-foreground mb-6">Reaching Your Savings Goals</h2>
+                <div className="prose prose-invert max-w-none text-muted-foreground leading-relaxed">
                   <p>Whether you're saving for a down payment on a house, a new car, or a rainy day fund, knowing exactly how much you need to save each month makes the goal achievable.</p>
                   
-                  <div className="my-8 bg-slate-900 text-slate-100 p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 bg-slate-800 px-3 py-1 text-xs font-bold rounded-bl-lg text-slate-400">FORMULA</div>
+                  <div className="my-8 bg-card border border-border text-foreground p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden">
+                    <div className="absolute top-0 right-0 bg-secondary px-3 py-1 text-xs font-bold rounded-bl-lg text-muted-foreground">FORMULA</div>
                     <div className="mb-4 text-blue-400 font-bold text-lg">FV = PV(1+r)^n + PMT[((1+r)^n - 1) / r]</div>
                     <ul className="space-y-2 opacity-90 list-none pl-0">
-                      <li><strong className="text-white">FV</strong> = Future Value (Target Amount)</li>
-                      <li><strong className="text-white">PV</strong> = Present Value (Current Savings)</li>
-                      <li><strong className="text-white">PMT</strong> = Monthly Contribution</li>
-                      <li><strong className="text-white">r</strong> = Monthly Interest Rate</li>
-                      <li><strong className="text-white">n</strong> = Number of Months</li>
+                      <li><strong className="text-primary">FV</strong> = Future Value (Target Amount)</li>
+                      <li><strong className="text-primary">PV</strong> = Present Value (Current Savings)</li>
+                      <li><strong className="text-primary">PMT</strong> = Monthly Contribution</li>
+                      <li><strong className="text-primary">r</strong> = Monthly Interest Rate</li>
+                      <li><strong className="text-primary">n</strong> = Number of Months</li>
                     </ul>
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">The Power of Yield</h3>
+                  <h3 className="text-xl font-bold text-foreground mt-8 mb-4">The Power of Yield</h3>
                   <p>Where you store your savings matters. A standard checking account earning 0.01% provides almost no growth. A High-Yield Savings Account (HYSA) earning 4-5% can shave months or even years off your timeline without exposing your money to stock market risk. For timelines over 5-7 years, investing in broad market index funds historically provides even higher returns, though with more volatility.</p>
                 </div>
               </div>
@@ -325,7 +323,7 @@ export default function SavingsGoalCalculator() {
             {/* Section 6: FAQ & Related */}
             <div className="lg:col-span-5 space-y-12">
               <div>
-                <h2 className="text-2xl font-black text-slate-900 mb-6">Frequently Asked Questions</h2>
+                <h2 className="text-2xl font-black text-foreground mb-6">Frequently Asked Questions</h2>
                 <FAQAccordion items={[
                   {
                     question: "What should my emergency fund goal be?",
@@ -343,7 +341,7 @@ export default function SavingsGoalCalculator() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-black text-slate-900 mb-6">Explore Related Tools</h2>
+                <h2 className="text-2xl font-black text-foreground mb-6">Explore Related Tools</h2>
                 <div className="grid gap-4">
                   <ToolCard 
                     title="Compound Interest" 

@@ -78,8 +78,8 @@ export default function CompoundInterestCalculator() {
 
       <main className="flex-1">
         {/* Section 1: Hero */}
-        <section className="relative overflow-hidden bg-slate-950 text-white pt-20 pb-24 border-b border-border">
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-blue-950 z-0"></div>
+        <section className="relative overflow-hidden bg-background text-foreground pt-20 pb-24 border-b border-border">
+          <div className="absolute inset-0 bg-gradient-to-b from-background to-primary/5 z-0"></div>
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay z-0"></div>
           
           <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -89,27 +89,27 @@ export default function CompoundInterestCalculator() {
                 <p className="text-lg text-slate-300 mb-8 max-w-xl">Calculate how your money can grow exponentially over time. See the power of "interest on interest."</p>
                 
                 <div className="flex flex-wrap gap-3 mb-8">
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <Zap className="h-4 w-4 text-yellow-400" /> Instant results
                   </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <Clock className="h-4 w-4 text-blue-400" /> Financial Insights
                   </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-medium">
                     <ShieldCheck className="h-4 w-4 text-green-400" /> Free forever
                   </div>
                 </div>
 
-                <form onSubmit={handleSearch} className="max-w-xl relative flex items-center bg-white/10 p-1.5 rounded-full backdrop-blur-md border border-white/20">
-                  <Search className="absolute left-5 h-5 w-5 text-white/50" />
+                <form onSubmit={handleSearch} className="max-w-xl relative flex items-center bg-foreground/10 p-1.5 rounded-full backdrop-blur-md border border-foreground/20">
+                  <Search className="absolute left-5 h-5 w-5 text-muted-foreground" />
                   <Input
                     type="text"
                     placeholder="e.g. compound 5k at 7% for 20 years"
-                    className="h-12 pl-14 pr-32 text-base rounded-full bg-transparent border-0 text-white placeholder:text-white/50 focus-visible:ring-0"
+                    className="h-12 pl-14 pr-32 text-base rounded-full bg-transparent border-0 text-foreground placeholder:text-muted-foreground focus-visible:ring-0"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                   />
-                  <Button type="submit" className="absolute right-1.5 h-10 rounded-full px-6 bg-blue-600 hover:bg-blue-700 text-white">
+                  <Button type="submit" className="absolute right-1.5 h-10 rounded-full px-6 bg-primary hover:bg-primary/90 text-primary-foreground">
                     Apply
                   </Button>
                 </form>
@@ -233,7 +233,7 @@ export default function CompoundInterestCalculator() {
                 <ResultCard 
                   title="Total Contributions" 
                   value={`$${results.totalContributions.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}`}
-                  valueColorClass="text-slate-900"
+                  valueColorClass="text-foreground"
                 />
                 <ResultCard 
                   title="Total Interest" 
@@ -283,23 +283,23 @@ export default function CompoundInterestCalculator() {
             {/* Section 5: How the Math Works */}
             <div className="lg:col-span-7 space-y-8">
               <div>
-                <h2 className="text-3xl font-black text-slate-900 mb-6">How Compound Interest Works</h2>
-                <div className="prose prose-blue max-w-none text-slate-600 leading-relaxed">
+                <h2 className="text-3xl font-black text-foreground mb-6">How Compound Interest Works</h2>
+                <div className="prose prose-invert max-w-none text-muted-foreground leading-relaxed">
                   <p>Compound interest is the interest on savings calculated on both the initial principal and the accumulated interest from previous periods. It essentially means "interest on interest" and is the mathematical engine behind long-term wealth building.</p>
                   
-                  <div className="my-8 bg-slate-900 text-slate-100 p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 bg-slate-800 px-3 py-1 text-xs font-bold rounded-bl-lg text-slate-400">FORMULA</div>
+                  <div className="my-8 bg-card border border-border text-foreground p-6 rounded-xl font-mono text-sm shadow-xl relative overflow-hidden">
+                    <div className="absolute top-0 right-0 bg-secondary px-3 py-1 text-xs font-bold rounded-bl-lg text-muted-foreground">FORMULA</div>
                     <div className="mb-4 text-blue-400 font-bold text-lg">A = P(1 + r/n)^(nt)</div>
                     <ul className="space-y-2 opacity-90 list-none pl-0">
-                      <li><strong className="text-white">A</strong> = Future value of the investment</li>
-                      <li><strong className="text-white">P</strong> = Principal investment amount</li>
-                      <li><strong className="text-white">r</strong> = Annual interest rate (decimal)</li>
-                      <li><strong className="text-white">n</strong> = Compounding frequency per year</li>
-                      <li><strong className="text-white">t</strong> = Number of years invested</li>
+                      <li><strong className="text-primary">A</strong> = Future value of the investment</li>
+                      <li><strong className="text-primary">P</strong> = Principal investment amount</li>
+                      <li><strong className="text-primary">r</strong> = Annual interest rate (decimal)</li>
+                      <li><strong className="text-primary">n</strong> = Compounding frequency per year</li>
+                      <li><strong className="text-primary">t</strong> = Number of years invested</li>
                     </ul>
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Key concepts to remember:</h3>
+                  <h3 className="text-xl font-bold text-foreground mt-8 mb-4">Key concepts to remember:</h3>
                   <ul className="space-y-3">
                     <li><strong>Time is your best friend:</strong> Because the exponent <code>t</code> is in the formula, extending your investment timeline has a much more dramatic effect than increasing the interest rate.</li>
                     <li><strong>Consistent contributions win:</strong> Adding even small amounts monthly accelerates the compounding curve significantly, especially in the later years.</li>
@@ -341,7 +341,7 @@ export default function CompoundInterestCalculator() {
             {/* Section 6: FAQ & Related */}
             <div className="lg:col-span-5 space-y-12">
               <div>
-                <h2 className="text-2xl font-black text-slate-900 mb-6">Frequently Asked Questions</h2>
+                <h2 className="text-2xl font-black text-foreground mb-6">Frequently Asked Questions</h2>
                 <FAQAccordion items={[
                   {
                     question: "Is daily compounding much better than monthly?",
@@ -363,7 +363,7 @@ export default function CompoundInterestCalculator() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-black text-slate-900 mb-6">Explore Related Tools</h2>
+                <h2 className="text-2xl font-black text-foreground mb-6">Explore Related Tools</h2>
                 <div className="grid gap-4">
                   <ToolCard 
                     title="Savings Goal Calculator" 
