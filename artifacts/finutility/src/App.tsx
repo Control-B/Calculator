@@ -19,6 +19,11 @@ import SavingsGoalCalculator from "@/pages/savings-goal";
 import NewsPage from "@/pages/news";
 import ArticlePage from "@/pages/article";
 import LegalPage from "@/pages/legal";
+
+import WhatIsCompoundInterestPage from "@/pages/learn/what-is-compound-interest";
+import MortgageGuidePage from "@/pages/learn/mortgage-guide";
+import CryptoProfitVsLossPage from "@/pages/learn/crypto-profit-vs-loss";
+import ExchangeRatesExplainedPage from "@/pages/learn/exchange-rates-explained";
 import ContactPage from "@/pages/contact";
 
 const queryClient = new QueryClient();
@@ -42,16 +47,18 @@ function Router() {
       
       <Route path="/news" component={NewsPage} />
 
-      {/* Educational Articles (reusing a generic article template for MVP) */}
-      <Route path="/what-is-compound-interest" component={ArticlePage} />
+      {/* Learn Articles */}
+      <Route path="/what-is-compound-interest" component={WhatIsCompoundInterestPage} />
+      <Route path="/how-to-calculate-mortgage-payments" component={MortgageGuidePage} />
+      <Route path="/crypto-profit-vs-loss-explained" component={CryptoProfitVsLossPage} />
+      <Route path="/what-affects-exchange-rates" component={ExchangeRatesExplainedPage} />
+
+      {/* Generic article fallback */}
       <Route path="/how-compound-interest-works" component={ArticlePage} />
-      <Route path="/how-to-calculate-mortgage-payments" component={ArticlePage} />
       <Route path="/loan-interest-explained" component={ArticlePage} />
       <Route path="/how-to-save-money-faster" component={ArticlePage} />
       <Route path="/how-to-calculate-crypto-profit" component={ArticlePage} />
-      <Route path="/crypto-profit-vs-loss-explained" component={ArticlePage} />
       <Route path="/how-currency-conversion-works" component={ArticlePage} />
-      <Route path="/what-affects-exchange-rates" component={ArticlePage} />
 
       {/* Legal & Info */}
       <Route path="/privacy-policy" component={LegalPage} />
