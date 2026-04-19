@@ -138,19 +138,19 @@ export default function HomePage() {
 
                 <div className="relative max-w-xl mb-6 group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                  <form onSubmit={handleSearch} className="relative flex items-center bg-card border border-border rounded-full p-3 shadow-xl">
-                    <Search className="absolute left-7 h-6 w-6 text-muted-foreground" />
+                  <form onSubmit={handleSearch} className="relative flex items-center bg-card border border-border rounded-full p-4 shadow-xl">
+                    <Search className="absolute left-8 h-6 w-6 text-muted-foreground" />
                     <Input
                       type="text"
                       placeholder="e.g. mortgage on 500k at 6.5%"
-                      className="h-14 pl-16 pr-44 text-lg rounded-full border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-foreground placeholder:text-muted-foreground"
+                      className="h-14 pl-16 pr-52 text-lg rounded-full border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-foreground placeholder:text-muted-foreground"
                       value={query}
                       onChange={(e) => setQuery(e.target.value)}
                       data-testid="input-hero-search"
                     />
                     <Button 
                       type="submit" 
-                      className="absolute right-4 h-12 rounded-full px-8 font-bold bg-primary hover:bg-primary/90 text-primary-foreground shadow-md transition-all hover:shadow-lg"
+                      className="absolute right-5 h-12 rounded-full px-8 font-bold bg-primary hover:bg-primary/90 text-primary-foreground shadow-md transition-all hover:shadow-lg"
                       data-testid="btn-hero-calculate"
                     >
                       Calculate
@@ -642,18 +642,18 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Start calculating smarter, right now.</h2>
             <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto font-medium">No account needed. No data saved. Always free.</p>
             
-            <form onSubmit={handleSearch} className="max-w-2xl mx-auto relative flex items-center shadow-2xl rounded-full p-3 bg-white/10 backdrop-blur-md border border-white/20">
+            <form onSubmit={handleSearch} className="max-w-2xl mx-auto relative flex items-center shadow-2xl rounded-full p-4 bg-white/10 backdrop-blur-md border border-white/20">
               <Search className="absolute left-8 h-6 w-6 text-white/70" />
               <Input
                 type="text"
                 placeholder="What do you want to calculate?"
-                className="h-16 pl-18 pr-48 text-lg rounded-full border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-white placeholder:text-white/60"
+                className="h-16 pl-16 pr-56 text-lg rounded-full border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-white placeholder:text-white/60"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
               <Button 
                 type="submit" 
-                className="absolute right-4 h-14 rounded-full px-8 font-bold bg-white text-blue-700 hover:bg-slate-100 shadow-md text-lg"
+                className="absolute right-5 h-14 rounded-full px-10 font-bold bg-white text-blue-700 hover:bg-slate-100 shadow-md text-lg"
               >
                 Go <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
