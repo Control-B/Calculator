@@ -160,7 +160,7 @@ export default function MortgageCalculator() {
                         id="homePrice" 
                         type="number" 
                         min="0" 
-                        className="pl-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" 
+                        className="pl-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary focus-visible:border-primary" 
                         value={homePrice} 
                         onChange={(e) => setHomePrice(e.target.value)} 
                       />
@@ -168,9 +168,9 @@ export default function MortgageCalculator() {
                   </div>
                   
                   <div className="space-y-2">
-                    <div className="flex justify-between items-end">
+                      <div className="flex justify-between items-end">
                       <Label htmlFor="downPaymentPercent" className="text-sm font-semibold">Down Payment</Label>
-                      <span className="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded-md">${downPaymentAmount.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
+                      <span className="text-xs font-bold text-muted-foreground bg-secondary px-2 py-1 rounded-md border border-border">${downPaymentAmount.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
                     </div>
                     <div className="flex gap-3">
                       <div className="relative flex-1">
@@ -179,18 +179,18 @@ export default function MortgageCalculator() {
                           type="number" 
                           min="0" 
                           max="100" 
-                          className="pr-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" 
+                          className="pr-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary focus-visible:border-primary" 
                           value={downPaymentPercent} 
                           onChange={(e) => setDownPaymentPercent(e.target.value)} 
                         />
                         <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                          <span className="text-slate-500 font-medium">%</span>
+                          <span className="text-muted-foreground font-medium">%</span>
                         </div>
                       </div>
                       <Button 
                         type="button" 
                         variant="outline" 
-                        className="h-12 rounded-xl px-4 font-semibold text-slate-500 hover:text-slate-900 border-slate-200 bg-slate-50"
+                        className="h-12 rounded-xl px-4 font-semibold text-muted-foreground hover:text-foreground border-border bg-secondary"
                         onClick={() => setDownPaymentPercent("20")}
                       >
                         20%
@@ -202,8 +202,8 @@ export default function MortgageCalculator() {
                     <div className="space-y-2">
                       <Label htmlFor="years" className="text-sm font-semibold">Loan Term</Label>
                       <div className="flex gap-2">
-                        <Button type="button" variant={years === "15" ? "default" : "outline"} onClick={() => setYears("15")} className="flex-1 h-12 rounded-xl font-bold bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:border-blue-600 transition-colors" data-state={years === "15" ? "active" : "inactive"}>15y</Button>
-                        <Button type="button" variant={years === "30" ? "default" : "outline"} onClick={() => setYears("30")} className="flex-1 h-12 rounded-xl font-bold bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:border-blue-600 transition-colors" data-state={years === "30" ? "active" : "inactive"}>30y</Button>
+                        <Button type="button" variant={years === "15" ? "default" : "outline"} onClick={() => setYears("15")} className="flex-1 h-12 rounded-xl font-bold bg-secondary border-border text-foreground hover:bg-accent data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary transition-colors" data-state={years === "15" ? "active" : "inactive"}>15y</Button>
+                        <Button type="button" variant={years === "30" ? "default" : "outline"} onClick={() => setYears("30")} className="flex-1 h-12 rounded-xl font-bold bg-secondary border-border text-foreground hover:bg-accent data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary transition-colors" data-state={years === "30" ? "active" : "inactive"}>30y</Button>
                       </div>
                     </div>
                     <div className="space-y-2">
@@ -213,39 +213,39 @@ export default function MortgageCalculator() {
                           id="rate" 
                           type="number" 
                           step="0.1" 
-                          className="pr-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" 
+                          className="pr-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary focus-visible:border-primary" 
                           value={rate} 
                           onChange={(e) => setRate(e.target.value)} 
                         />
                         <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                          <span className="text-slate-500 font-medium">%</span>
+                          <span className="text-muted-foreground font-medium">%</span>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-100 space-y-4">
-                    <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider">Monthly Expenses</h4>
+                  <div className="pt-4 border-t border-border space-y-4">
+                    <h4 className="text-sm font-bold text-foreground uppercase tracking-wider">Monthly Expenses</h4>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="propertyTax" className="text-xs font-semibold text-slate-500">Property Tax</Label>
+                        <Label htmlFor="propertyTax" className="text-xs font-semibold text-muted-foreground">Property Tax</Label>
                         <div className="relative">
-                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-slate-400">$</span></div>
-                          <Input id="propertyTax" type="number" min="0" className="pl-8 h-10 rounded-lg bg-slate-50 border-slate-200" value={propertyTax} onChange={(e) => setPropertyTax(e.target.value)} />
+                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-muted-foreground">$</span></div>
+                          <Input id="propertyTax" type="number" min="0" className="pl-8 h-10 rounded-lg bg-secondary border-border text-foreground" value={propertyTax} onChange={(e) => setPropertyTax(e.target.value)} />
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="insurance" className="text-xs font-semibold text-slate-500">Home Insurance</Label>
+                        <Label htmlFor="insurance" className="text-xs font-semibold text-muted-foreground">Home Insurance</Label>
                         <div className="relative">
-                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-slate-400">$</span></div>
-                          <Input id="insurance" type="number" min="0" className="pl-8 h-10 rounded-lg bg-slate-50 border-slate-200" value={insurance} onChange={(e) => setInsurance(e.target.value)} />
+                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-muted-foreground">$</span></div>
+                          <Input id="insurance" type="number" min="0" className="pl-8 h-10 rounded-lg bg-secondary border-border text-foreground" value={insurance} onChange={(e) => setInsurance(e.target.value)} />
                         </div>
                       </div>
                       <div className="space-y-2 col-span-2">
-                        <Label htmlFor="hoa" className="text-xs font-semibold text-slate-500">HOA Fees</Label>
+                        <Label htmlFor="hoa" className="text-xs font-semibold text-muted-foreground">HOA Fees</Label>
                         <div className="relative">
-                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-slate-400">$</span></div>
-                          <Input id="hoa" type="number" min="0" className="pl-8 h-10 rounded-lg bg-slate-50 border-slate-200" value={hoa} onChange={(e) => setHoa(e.target.value)} />
+                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-muted-foreground">$</span></div>
+                          <Input id="hoa" type="number" min="0" className="pl-8 h-10 rounded-lg bg-secondary border-border text-foreground" value={hoa} onChange={(e) => setHoa(e.target.value)} />
                         </div>
                       </div>
                     </div>
@@ -284,10 +284,10 @@ export default function MortgageCalculator() {
               </motion.div>
 
               {/* Section 3: Charts & Visualization */}
-              <div className="bg-white p-6 md:p-8 rounded-2xl border border-border shadow-sm flex flex-col md:flex-row items-center gap-8">
+              <div className="bg-card p-6 md:p-8 rounded-2xl border border-border shadow-sm flex flex-col md:flex-row items-center gap-8">
                 <div className="w-full md:w-1/2">
-                  <h3 className="font-black text-xl text-slate-900 mb-2">Payment Breakdown</h3>
-                  <p className="text-slate-500 text-sm mb-6">See exactly where your monthly payment goes.</p>
+                  <h3 className="font-black text-xl text-foreground mb-2">Payment Breakdown</h3>
+                  <p className="text-muted-foreground text-sm mb-6">See exactly where your monthly payment goes.</p>
                   <ChartModule 
                     type="pie"
                     data={chartData}
@@ -295,40 +295,40 @@ export default function MortgageCalculator() {
                   />
                 </div>
                 <div className="w-full md:w-1/2 space-y-4">
-                  <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                    <div className="flex justify-between items-center pb-3 border-b border-slate-200">
+                  <div className="bg-secondary rounded-xl p-6 border border-border">
+                    <div className="flex justify-between items-center pb-3 border-b border-border">
                       <div className="flex items-center gap-3">
-                        <div className="w-4 h-4 rounded-full bg-blue-600 shadow-sm shadow-blue-600/30"></div>
-                        <span className="text-slate-600 font-medium">Principal & Interest</span>
+                        <div className="w-4 h-4 rounded-full bg-blue-500 shadow-sm shadow-blue-500/30"></div>
+                        <span className="text-foreground font-medium">Principal & Interest</span>
                       </div>
-                      <span className="font-bold text-slate-900">${results.principalAndInterest.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
+                      <span className="font-bold text-foreground">${results.principalAndInterest.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
                     </div>
-                    <div className="flex justify-between items-center py-3 border-b border-slate-200">
+                    <div className="flex justify-between items-center py-3 border-b border-border">
                       <div className="flex items-center gap-3">
-                        <div className="w-4 h-4 rounded-full bg-green-600 shadow-sm shadow-green-600/30"></div>
-                        <span className="text-slate-600 font-medium">Property Tax</span>
+                        <div className="w-4 h-4 rounded-full bg-green-500 shadow-sm shadow-green-500/30"></div>
+                        <span className="text-foreground font-medium">Property Tax</span>
                       </div>
-                      <span className="font-bold text-slate-900">${results.tax.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
+                      <span className="font-bold text-foreground">${results.tax.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
                     </div>
-                    <div className="flex justify-between items-center py-3 border-b border-slate-200">
+                    <div className="flex justify-between items-center py-3 border-b border-border">
                       <div className="flex items-center gap-3">
-                        <div className="w-4 h-4 rounded-full bg-red-600 shadow-sm shadow-red-600/30"></div>
-                        <span className="text-slate-600 font-medium">Home Insurance</span>
+                        <div className="w-4 h-4 rounded-full bg-red-500 shadow-sm shadow-red-500/30"></div>
+                        <span className="text-foreground font-medium">Home Insurance</span>
                       </div>
-                      <span className="font-bold text-slate-900">${results.insurance.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
+                      <span className="font-bold text-foreground">${results.insurance.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
                     </div>
                     {results.hoa > 0 && (
-                      <div className="flex justify-between items-center py-3 border-b border-slate-200">
+                      <div className="flex justify-between items-center py-3 border-b border-border">
                         <div className="flex items-center gap-3">
                           <div className="w-4 h-4 rounded-full bg-amber-500 shadow-sm shadow-amber-500/30"></div>
-                          <span className="text-slate-600 font-medium">HOA Fees</span>
+                          <span className="text-foreground font-medium">HOA Fees</span>
                         </div>
-                        <span className="font-bold text-slate-900">${results.hoa.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
+                        <span className="font-bold text-foreground">${results.hoa.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
                       </div>
                     )}
-                    <div className="flex justify-between items-center pt-4 mt-2 bg-blue-50/50 -mx-4 px-4 rounded-b-xl">
-                      <span className="text-slate-700 font-bold uppercase tracking-wider text-xs">Total Cost of Home</span>
-                      <span className="font-black text-xl text-blue-700">${results.totalCost.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
+                    <div className="flex justify-between items-center pt-4 mt-2 bg-primary/10 -mx-4 px-4 rounded-b-xl">
+                      <span className="text-foreground font-bold uppercase tracking-wider text-xs">Total Cost of Home</span>
+                      <span className="font-black text-xl text-primary">${results.totalCost.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
                     </div>
                   </div>
                 </div>
@@ -342,9 +342,9 @@ export default function MortgageCalculator() {
           <div className="my-8">
             <AIInsightCard content={insight} />
             <div className="flex flex-wrap gap-2 mt-4 ml-2">
-              <span className="text-sm font-medium text-slate-500 flex items-center mr-2">Related tools:</span>
-              <a href="/loan-payment-calculator" className="text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-full transition-colors">Amortization Schedule</a>
-              <a href="/savings-goal-calculator" className="text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-full transition-colors">Down Payment Savings</a>
+              <span className="text-sm font-medium text-muted-foreground flex items-center mr-2">Related tools:</span>
+              <a href="/loan-payment-calculator" className="text-xs font-semibold bg-secondary text-foreground hover:bg-accent border border-border px-3 py-1.5 rounded-full transition-colors">Amortization Schedule</a>
+              <a href="/savings-goal-calculator" className="text-xs font-semibold bg-secondary text-foreground hover:bg-accent border border-border px-3 py-1.5 rounded-full transition-colors">Down Payment Savings</a>
             </div>
           </div>
 

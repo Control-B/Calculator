@@ -138,13 +138,13 @@ export default function CompoundInterestCalculator() {
                     <Label htmlFor="principal" className="text-sm font-semibold">Initial Investment</Label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <span className="text-slate-500 font-medium">$</span>
+                        <span className="text-muted-foreground font-medium">$</span>
                       </div>
                       <Input 
                         id="principal" 
                         type="number" 
                         min="0" 
-                        className="pl-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" 
+                        className="pl-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary focus-visible:border-primary" 
                         value={principal} 
                         onChange={(e) => setPrincipal(e.target.value)} 
                       />
@@ -154,13 +154,13 @@ export default function CompoundInterestCalculator() {
                     <Label htmlFor="contribution" className="text-sm font-semibold">Monthly Contribution</Label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <span className="text-slate-500 font-medium">$</span>
+                        <span className="text-muted-foreground font-medium">$</span>
                       </div>
                       <Input 
                         id="contribution" 
                         type="number" 
                         min="0" 
-                        className="pl-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" 
+                        className="pl-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary focus-visible:border-primary" 
                         value={monthlyContribution} 
                         onChange={(e) => setMonthlyContribution(e.target.value)} 
                       />
@@ -174,7 +174,7 @@ export default function CompoundInterestCalculator() {
                         type="number" 
                         min="1" 
                         max="100" 
-                        className="text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" 
+                        className="text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary focus-visible:border-primary" 
                         value={years} 
                         onChange={(e) => setYears(e.target.value)} 
                       />
@@ -186,12 +186,12 @@ export default function CompoundInterestCalculator() {
                           id="rate" 
                           type="number" 
                           step="0.1" 
-                          className="pr-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" 
+                          className="pr-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary focus-visible:border-primary" 
                           value={rate} 
                           onChange={(e) => setRate(e.target.value)} 
                         />
                         <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                          <span className="text-slate-500 font-medium">%</span>
+                          <span className="text-muted-foreground font-medium">%</span>
                         </div>
                       </div>
                     </div>
@@ -199,7 +199,7 @@ export default function CompoundInterestCalculator() {
                   <div className="space-y-2">
                     <Label htmlFor="frequency" className="text-sm font-semibold">Compounding Frequency</Label>
                     <Select value={frequency} onValueChange={setFrequency}>
-                      <SelectTrigger id="frequency" className="h-12 rounded-xl bg-slate-50 border-slate-200 font-medium text-base">
+                      <SelectTrigger id="frequency" className="h-12 rounded-xl bg-secondary border-border text-foreground font-medium text-base">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -243,11 +243,11 @@ export default function CompoundInterestCalculator() {
               </motion.div>
 
               {/* Section 3: Charts & Visualization */}
-              <div className="bg-white p-6 md:p-8 rounded-2xl border border-border shadow-sm">
+              <div className="bg-card p-6 md:p-8 rounded-2xl border border-border shadow-sm">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
                   <div>
-                    <h3 className="font-black text-2xl text-slate-900">Growth Over Time</h3>
-                    <p className="text-slate-500 text-sm mt-1">See how your balance shifts from contributions to interest over {years} years.</p>
+                    <h3 className="font-black text-2xl text-foreground">Growth Over Time</h3>
+                    <p className="text-muted-foreground text-sm mt-1">See how your balance shifts from contributions to interest over {years} years.</p>
                   </div>
                 </div>
                 
@@ -272,9 +272,9 @@ export default function CompoundInterestCalculator() {
           <div className="my-8">
             <AIInsightCard content={insight} />
             <div className="flex flex-wrap gap-2 mt-4 ml-2">
-              <span className="text-sm font-medium text-slate-500 flex items-center mr-2">Related tools:</span>
-              <a href="/savings-goal-calculator" className="text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-full transition-colors">Savings Goal</a>
-              <a href="/mortgage-calculator" className="text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-full transition-colors">Mortgage Calculator</a>
+              <span className="text-sm font-medium text-muted-foreground flex items-center mr-2">Related tools:</span>
+              <a href="/savings-goal-calculator" className="text-xs font-semibold bg-secondary text-foreground hover:bg-accent border border-border px-3 py-1.5 rounded-full transition-colors">Savings Goal</a>
+              <a href="/mortgage-calculator" className="text-xs font-semibold bg-secondary text-foreground hover:bg-accent border border-border px-3 py-1.5 rounded-full transition-colors">Mortgage Calculator</a>
             </div>
           </div>
 
@@ -309,27 +309,27 @@ export default function CompoundInterestCalculator() {
               </div>
               
               {/* Breakdown Table inside math section */}
-              <div className="bg-white rounded-2xl border border-border shadow-sm overflow-hidden mt-8">
-                <div className="p-6 border-b border-border bg-slate-50">
-                  <h3 className="font-bold text-lg">Detailed Yearly Breakdown</h3>
+              <div className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden mt-8">
+                <div className="p-6 border-b border-border bg-muted/40">
+                  <h3 className="font-bold text-lg text-foreground">Detailed Yearly Breakdown</h3>
                 </div>
                 <div className="max-h-[400px] overflow-auto">
                   <Table>
-                    <TableHeader className="bg-white sticky top-0 shadow-sm">
+                    <TableHeader className="bg-card sticky top-0 shadow-sm">
                       <TableRow>
-                        <TableHead>Year</TableHead>
-                        <TableHead className="text-right">Total Contributions</TableHead>
-                        <TableHead className="text-right">Interest Accrued</TableHead>
-                        <TableHead className="text-right">End Balance</TableHead>
+                        <TableHead className="text-foreground">Year</TableHead>
+                        <TableHead className="text-right text-foreground">Total Contributions</TableHead>
+                        <TableHead className="text-right text-foreground">Interest Accrued</TableHead>
+                        <TableHead className="text-right text-foreground">End Balance</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
                       {results.yearlyData.map((row) => (
                         <TableRow key={row.year}>
-                          <TableCell className="font-medium text-slate-900">{row.year}</TableCell>
-                          <TableCell className="text-right text-slate-500">${row.principal.toLocaleString(undefined, {maximumFractionDigits:0})}</TableCell>
-                          <TableCell className="text-right text-emerald-600 font-medium">${row.interest.toLocaleString(undefined, {maximumFractionDigits:0})}</TableCell>
-                          <TableCell className="text-right font-bold text-slate-900">${row.balance.toLocaleString(undefined, {maximumFractionDigits:0})}</TableCell>
+                          <TableCell className="font-medium text-foreground">{row.year}</TableCell>
+                          <TableCell className="text-right text-muted-foreground">${row.principal.toLocaleString(undefined, {maximumFractionDigits:0})}</TableCell>
+                          <TableCell className="text-right text-emerald-400 font-medium">${row.interest.toLocaleString(undefined, {maximumFractionDigits:0})}</TableCell>
+                          <TableCell className="text-right font-bold text-foreground">${row.balance.toLocaleString(undefined, {maximumFractionDigits:0})}</TableCell>
                         </TableRow>
                       ))}
                     </TableBody>

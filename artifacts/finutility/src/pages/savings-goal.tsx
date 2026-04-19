@@ -162,17 +162,17 @@ export default function SavingsGoalCalculator() {
             <div className="lg:col-span-4">
               <CalculatorCard title="Goal Details">
                 <div className="space-y-6">
-                  <div className="flex gap-2 p-1.5 bg-slate-100 rounded-xl mb-4">
+                  <div className="flex gap-2 p-1.5 bg-secondary rounded-xl mb-4">
                     <Button 
                       type="button" 
                       variant={calcMode === "time" ? "default" : "ghost"} 
-                      className={`flex-1 rounded-lg font-bold ${calcMode === "time" ? "bg-white text-blue-600 shadow-sm" : "text-slate-500 hover:text-slate-900 hover:bg-slate-200"}`}
+                      className={`flex-1 rounded-lg font-bold ${calcMode === "time" ? "bg-card text-primary shadow-sm" : "text-muted-foreground hover:text-foreground hover:bg-accent"}`}
                       onClick={() => setCalcMode("time")}
                     >Find Time</Button>
                     <Button 
                       type="button" 
                       variant={calcMode === "required" ? "default" : "ghost"} 
-                      className={`flex-1 rounded-lg font-bold ${calcMode === "required" ? "bg-white text-blue-600 shadow-sm" : "text-slate-500 hover:text-slate-900 hover:bg-slate-200"}`}
+                      className={`flex-1 rounded-lg font-bold ${calcMode === "required" ? "bg-card text-primary shadow-sm" : "text-muted-foreground hover:text-foreground hover:bg-accent"}`}
                       onClick={() => setCalcMode("required")}
                     >Find Amount</Button>
                   </div>
@@ -181,37 +181,37 @@ export default function SavingsGoalCalculator() {
                     <Label htmlFor="targetAmount" className="text-sm font-semibold">Target Goal Amount</Label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-slate-500 font-medium">$</span></div>
-                      <Input id="targetAmount" type="number" min="0" className="pl-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" value={targetAmount} onChange={(e) => setTargetAmount(e.target.value)} />
+                      <Input id="targetAmount" type="number" min="0" className="pl-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary focus-visible:border-primary" value={targetAmount} onChange={(e) => setTargetAmount(e.target.value)} />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="currentSavings" className="text-sm font-semibold">Current Savings</Label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-slate-500 font-medium">$</span></div>
-                      <Input id="currentSavings" type="number" min="0" className="pl-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" value={currentSavings} onChange={(e) => setCurrentSavings(e.target.value)} />
+                      <Input id="currentSavings" type="number" min="0" className="pl-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary focus-visible:border-primary" value={currentSavings} onChange={(e) => setCurrentSavings(e.target.value)} />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="annualReturn" className="text-sm font-semibold">Expected Annual Return</Label>
                     <div className="relative">
-                      <Input id="annualReturn" type="number" step="0.1" className="pr-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)} />
-                      <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"><span className="text-slate-500 font-medium">%</span></div>
+                      <Input id="annualReturn" type="number" step="0.1" className="pr-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary focus-visible:border-primary" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)} />
+                      <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"><span className="text-muted-foreground font-medium">%</span></div>
                     </div>
                   </div>
 
                   {calcMode === "time" ? (
-                    <div className="space-y-2 pt-4 border-t border-slate-100">
-                      <Label htmlFor="monthlyContribution" className="text-blue-600 font-bold">I plan to save monthly</Label>
+                    <div className="space-y-2 pt-4 border-t border-border">
+                      <Label htmlFor="monthlyContribution" className="text-primary font-bold">I plan to save monthly</Label>
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-slate-500 font-medium">$</span></div>
-                        <Input id="monthlyContribution" type="number" min="0" className="pl-8 text-lg font-medium h-12 rounded-xl bg-blue-50 border-blue-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" value={monthlyContribution} onChange={(e) => setMonthlyContribution(e.target.value)} />
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-muted-foreground font-medium">$</span></div>
+                        <Input id="monthlyContribution" type="number" min="0" className="pl-8 text-lg font-medium h-12 rounded-xl bg-primary/10 border-primary/30 text-foreground focus-visible:ring-primary focus-visible:border-primary" value={monthlyContribution} onChange={(e) => setMonthlyContribution(e.target.value)} />
                       </div>
                     </div>
                   ) : (
-                    <div className="space-y-2 pt-4 border-t border-slate-100">
-                      <Label htmlFor="timelineMonths" className="text-blue-600 font-bold">I want to reach this in (months)</Label>
-                      <Input id="timelineMonths" type="number" min="1" className="text-lg font-medium h-12 rounded-xl bg-blue-50 border-blue-200 focus-visible:ring-blue-500 focus-visible:border-blue-500" value={timelineMonths} onChange={(e) => setTimelineMonths(e.target.value)} />
-                      <p className="text-xs font-semibold text-slate-500 mt-1">{Math.floor(Number(timelineMonths)/12)} years, {Number(timelineMonths)%12} months</p>
+                    <div className="space-y-2 pt-4 border-t border-border">
+                      <Label htmlFor="timelineMonths" className="text-primary font-bold">I want to reach this in (months)</Label>
+                      <Input id="timelineMonths" type="number" min="1" className="text-lg font-medium h-12 rounded-xl bg-primary/10 border-primary/30 text-foreground focus-visible:ring-primary focus-visible:border-primary" value={timelineMonths} onChange={(e) => setTimelineMonths(e.target.value)} />
+                      <p className="text-xs font-semibold text-muted-foreground mt-1">{Math.floor(Number(timelineMonths)/12)} years, {Number(timelineMonths)%12} months</p>
                     </div>
                   )}
 
@@ -260,11 +260,11 @@ export default function SavingsGoalCalculator() {
               </motion.div>
 
               {/* Section 3: Charts & Visualization */}
-              <div className="bg-white p-6 md:p-8 rounded-2xl border border-border shadow-sm">
+              <div className="bg-card p-6 md:p-8 rounded-2xl border border-border shadow-sm">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
                   <div>
-                    <h3 className="font-black text-2xl text-slate-900">Progress to Goal</h3>
-                    <p className="text-slate-500 text-sm mt-1">See how your balance grows toward your target over time.</p>
+                    <h3 className="font-black text-2xl text-foreground">Progress to Goal</h3>
+                    <p className="text-muted-foreground text-sm mt-1">See how your balance grows toward your target over time.</p>
                   </div>
                 </div>
                 
@@ -289,9 +289,9 @@ export default function SavingsGoalCalculator() {
           <div className="my-8">
             <AIInsightCard content={insight} />
             <div className="flex flex-wrap gap-2 mt-4 ml-2">
-              <span className="text-sm font-medium text-slate-500 flex items-center mr-2">Related tools:</span>
-              <a href="/compound-interest-calculator" className="text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-full transition-colors">Compound Interest</a>
-              <a href="/mortgage-calculator" className="text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-full transition-colors">Mortgage Calculator</a>
+              <span className="text-sm font-medium text-muted-foreground flex items-center mr-2">Related tools:</span>
+              <a href="/compound-interest-calculator" className="text-xs font-semibold bg-secondary text-foreground hover:bg-accent border border-border px-3 py-1.5 rounded-full transition-colors">Compound Interest</a>
+              <a href="/mortgage-calculator" className="text-xs font-semibold bg-secondary text-foreground hover:bg-accent border border-border px-3 py-1.5 rounded-full transition-colors">Mortgage Calculator</a>
             </div>
           </div>
 

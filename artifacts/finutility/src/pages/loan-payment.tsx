@@ -173,7 +173,7 @@ export default function LoanPaymentCalculator() {
                         id="loanAmount" 
                         type="number" 
                         min="0" 
-                        className="pl-8 text-lg font-medium h-12 rounded-xl bg-black border-white/10 text-white focus-visible:ring-primary" 
+                        className="pl-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary" 
                         value={loanAmount} 
                         onChange={(e) => setLoanAmount(e.target.value)} 
                       />
@@ -186,7 +186,7 @@ export default function LoanPaymentCalculator() {
                         id="rate" 
                         type="number" 
                         step="0.1" 
-                        className="pr-8 text-lg font-medium h-12 rounded-xl bg-black border-white/10 text-white focus-visible:ring-primary" 
+                        className="pr-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary" 
                         value={rate} 
                         onChange={(e) => setRate(e.target.value)} 
                       />
@@ -201,7 +201,7 @@ export default function LoanPaymentCalculator() {
                       id="termMonths" 
                       type="number" 
                       min="1" 
-                      className="text-lg font-medium h-12 rounded-xl bg-black border-white/10 text-white focus-visible:ring-primary" 
+                      className="text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary" 
                       value={termMonths} 
                       onChange={(e) => setTermMonths(e.target.value)} 
                     />

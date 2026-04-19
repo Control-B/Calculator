@@ -144,7 +144,7 @@ export default function CryptoProfitCalculator() {
                       id="coin" 
                       type="text" 
                       placeholder="e.g., BTC" 
-                      className="text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 uppercase focus-visible:ring-orange-500 focus-visible:border-orange-500"
+                      className="text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground uppercase focus-visible:ring-orange-500 focus-visible:border-orange-500"
                       value={coin} 
                       onChange={(e) => setCoin(e.target.value)} 
                     />
@@ -156,7 +156,7 @@ export default function CryptoProfitCalculator() {
                       type="number" 
                       min="0" 
                       step="any" 
-                      className="text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-orange-500 focus-visible:border-orange-500"
+                      className="text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-orange-500 focus-visible:border-orange-500"
                       value={qty} 
                       onChange={(e) => setQty(e.target.value)} 
                     />
@@ -166,22 +166,22 @@ export default function CryptoProfitCalculator() {
                       <Label htmlFor="buyPrice" className="text-sm font-semibold">Buy Price</Label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-slate-500">$</span></div>
-                        <Input id="buyPrice" type="number" min="0" step="any" className="pl-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-orange-500 focus-visible:border-orange-500" value={buyPrice} onChange={(e) => setBuyPrice(e.target.value)} />
+                        <Input id="buyPrice" type="number" min="0" step="any" className="pl-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-orange-500 focus-visible:border-orange-500" value={buyPrice} onChange={(e) => setBuyPrice(e.target.value)} />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="sellPrice" className="text-sm font-semibold">Sell Price</Label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-slate-500">$</span></div>
-                        <Input id="sellPrice" type="number" min="0" step="any" className="pl-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-orange-500 focus-visible:border-orange-500" value={sellPrice} onChange={(e) => setSellPrice(e.target.value)} />
+                        <Input id="sellPrice" type="number" min="0" step="any" className="pl-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-orange-500 focus-visible:border-orange-500" value={sellPrice} onChange={(e) => setSellPrice(e.target.value)} />
                       </div>
                     </div>
                   </div>
-                  <div className="space-y-2 pt-4 border-t border-slate-100">
+                  <div className="space-y-2 pt-4 border-t border-border">
                     <Label htmlFor="fees" className="text-sm font-semibold">Total Trading Fees</Label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-slate-500">$</span></div>
-                      <Input id="fees" type="number" min="0" className="pl-8 text-lg font-medium h-12 rounded-xl bg-slate-50 border-slate-200 focus-visible:ring-orange-500 focus-visible:border-orange-500" value={fees} onChange={(e) => setFees(e.target.value)} />
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span className="text-muted-foreground">$</span></div>
+                      <Input id="fees" type="number" min="0" className="pl-8 text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-orange-500 focus-visible:border-orange-500" value={fees} onChange={(e) => setFees(e.target.value)} />
                     </div>
                     <p className="text-xs text-muted-foreground mt-1">Include buy/sell exchange fees and network gas.</p>
                   </div>
@@ -216,22 +216,22 @@ export default function CryptoProfitCalculator() {
               </motion.div>
 
               {/* Section 3: Detailed Breakdown */}
-              <div className="bg-white p-6 md:p-8 rounded-2xl border border-border shadow-sm">
-                <h3 className="font-black text-xl text-slate-900 mb-6">Trade Summary</h3>
+              <div className="bg-card p-6 md:p-8 rounded-2xl border border-border shadow-sm">
+                <h3 className="font-black text-xl text-foreground mb-6">Trade Summary</h3>
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                    <span className="text-slate-500 font-medium">Initial Investment</span>
-                    <span className="font-bold text-slate-900">${((Number(buyPrice) || 0) * (Number(qty) || 0)).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</span>
+                  <div className="flex justify-between items-center pb-3 border-b border-border">
+                    <span className="text-muted-foreground font-medium">Initial Investment</span>
+                    <span className="font-bold text-foreground">${((Number(buyPrice) || 0) * (Number(qty) || 0)).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</span>
                   </div>
-                  <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                    <span className="text-slate-500 font-medium">Total Exit Value</span>
-                    <span className="font-bold text-slate-900">${((Number(sellPrice) || 0) * (Number(qty) || 0)).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</span>
+                  <div className="flex justify-between items-center pb-3 border-b border-border">
+                    <span className="text-muted-foreground font-medium">Total Exit Value</span>
+                    <span className="font-bold text-foreground">${((Number(sellPrice) || 0) * (Number(qty) || 0)).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</span>
                   </div>
-                  <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                    <span className="text-slate-500 font-medium">Fees Paid</span>
-                    <span className="font-bold text-rose-500">-${(Number(fees) || 0).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</span>
+                  <div className="flex justify-between items-center pb-3 border-b border-border">
+                    <span className="text-muted-foreground font-medium">Fees Paid</span>
+                    <span className="font-bold text-rose-400">-${(Number(fees) || 0).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</span>
                   </div>
-                  <div className="flex justify-between items-center pt-4 bg-orange-50 p-4 rounded-xl mt-4">
+                  <div className="flex justify-between items-center pt-4 bg-orange-500/10 p-4 rounded-xl mt-4">
                     <div className="flex flex-col">
                       <span className="text-slate-900 font-bold">Break-even Price</span>
                       <span className="text-xs text-slate-500 font-medium">Sell above this to profit</span>
@@ -249,8 +249,8 @@ export default function CryptoProfitCalculator() {
           <div className="my-8">
             <AIInsightCard content={insight} />
             <div className="flex flex-wrap gap-2 mt-4 ml-2">
-              <span className="text-sm font-medium text-slate-500 flex items-center mr-2">Related tools:</span>
-              <a href="/currency-converter" className="text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-full transition-colors">Currency Converter</a>
+              <span className="text-sm font-medium text-muted-foreground flex items-center mr-2">Related tools:</span>
+              <a href="/currency-converter" className="text-xs font-semibold bg-secondary text-foreground hover:bg-accent border border-border px-3 py-1.5 rounded-full transition-colors">Currency Converter</a>
             </div>
           </div>
 

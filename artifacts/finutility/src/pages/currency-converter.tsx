@@ -154,7 +154,7 @@ export default function CurrencyConverter() {
                         min="0" 
                         value={amount} 
                         onChange={(e) => setAmount(e.target.value)} 
-                        className="text-lg font-medium h-12 rounded-xl bg-black border-white/10 text-white focus-visible:ring-primary" 
+                        className="text-lg font-medium h-12 rounded-xl bg-secondary border-border text-foreground focus-visible:ring-primary" 
                       />
                     </div>
                   </div>
@@ -163,7 +163,7 @@ export default function CurrencyConverter() {
                     <div className="space-y-2 flex-1">
                       <Label className="text-sm font-semibold">From</Label>
                       <Select value={fromCurrency} onValueChange={setFromCurrency}>
-                        <SelectTrigger className="h-12 rounded-xl bg-black border-white/10 text-white font-medium text-base">
+                        <SelectTrigger className="h-12 rounded-xl bg-secondary border-border text-foreground font-medium text-base">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
@@ -173,7 +173,7 @@ export default function CurrencyConverter() {
                     </div>
                     
                     <div className="pt-6">
-                      <Button variant="ghost" size="icon" onClick={handleSwap} className="rounded-full bg-white/10 hover:bg-primary/20 hover:text-primary text-foreground h-12 w-12 border border-white/10 transition-colors">
+                      <Button variant="ghost" size="icon" onClick={handleSwap} className="rounded-full bg-secondary hover:bg-accent text-foreground h-12 w-12 border border-border transition-colors">
                         <ArrowRightLeft className="h-5 w-5" />
                       </Button>
                     </div>
@@ -181,7 +181,7 @@ export default function CurrencyConverter() {
                     <div className="space-y-2 flex-1">
                       <Label className="text-sm font-semibold">To</Label>
                       <Select value={toCurrency} onValueChange={setToCurrency}>
-                        <SelectTrigger className="h-12 rounded-xl bg-black border-white/10 text-white font-medium text-base">
+                        <SelectTrigger className="h-12 rounded-xl bg-secondary border-border text-foreground font-medium text-base">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
