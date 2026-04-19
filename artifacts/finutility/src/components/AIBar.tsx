@@ -100,23 +100,33 @@ export function AIBar({
           </button>
         </div>
 
-        {/* 2×3 rotating topic cards */}
+        {/* 2×3 rotating topic cards - colorful */}
         <div className="grid grid-cols-3 gap-3">
-          {CARD_POOLS.map((pool, i) => (
-            <button
-              key={i}
-              onClick={() => handleSubmit(pool[cardIndices[i]])}
-              className="h-20 flex items-center gap-2.5 text-left bg-zinc-800 hover:bg-violet-950/60 border border-zinc-600 hover:border-violet-500/60 rounded-xl px-4 py-3 transition-all group"
-            >
-              <span className="text-zinc-500 group-hover:text-violet-400 transition-colors text-lg leading-none shrink-0">+</span>
-              <span
-                className="text-xs text-zinc-400 group-hover:text-violet-200 transition-all leading-snug line-clamp-2"
-                style={{ opacity: fadingCard === i ? 0 : 1, transition: "opacity 0.28s ease" }}
+          {CARD_POOLS.map((pool, i) => {
+            const cardStyles = [
+              "bg-gradient-to-br from-blue-600/80 to-blue-800/80 border-blue-500/50 hover:border-blue-400 hover:from-blue-500/90 hover:to-blue-700/90",
+              "bg-gradient-to-br from-violet-600/80 to-purple-800/80 border-violet-500/50 hover:border-violet-400 hover:from-violet-500/90 hover:to-purple-700/90",
+              "bg-gradient-to-br from-fuchsia-600/80 to-pink-800/80 border-fuchsia-500/50 hover:border-fuchsia-400 hover:from-fuchsia-500/90 hover:to-pink-700/90",
+              "bg-gradient-to-br from-orange-500/80 to-red-700/80 border-orange-500/50 hover:border-orange-400 hover:from-orange-400/90 hover:to-red-600/90",
+              "bg-gradient-to-br from-cyan-500/80 to-blue-700/80 border-cyan-500/50 hover:border-cyan-400 hover:from-cyan-400/90 hover:to-blue-600/90",
+              "bg-gradient-to-br from-emerald-500/80 to-teal-700/80 border-emerald-500/50 hover:border-emerald-400 hover:from-emerald-400/90 hover:to-teal-600/90",
+            ];
+            return (
+              <button
+                key={i}
+                onClick={() => handleSubmit(pool[cardIndices[i]])}
+                className={`h-20 flex items-center gap-2.5 text-left border rounded-xl px-4 py-3 transition-all group shadow-lg ${cardStyles[i]}`}
               >
-                {pool[cardIndices[i]]}
-              </span>
-            </button>
-          ))}
+                <span className="text-white/70 group-hover:text-white transition-colors text-lg leading-none shrink-0">+</span>
+                <span
+                  className="text-xs text-white/90 group-hover:text-white font-medium transition-all leading-snug line-clamp-2"
+                  style={{ opacity: fadingCard === i ? 0 : 1, transition: "opacity 0.28s ease" }}
+                >
+                  {pool[cardIndices[i]]}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Result panel */}
