@@ -77,30 +77,30 @@
   /* white → near-black surface */
   --color-white: #0d0d0d;
 
-  /* Light → dark surfaces */
+  /* Light → dark surfaces (used for bg-slate-50, bg-slate-100, etc.) */
   --color-slate-50:  #111318;
   --color-slate-100: #161a22;
   --color-slate-200: #1e2330;
-  /* Mid → bright text tones (no dark text anywhere) */
+  /* Mid → bright text tones (used for text-slate-300/400/500/600/700) */
   --color-slate-300: #c8d0e0;
   --color-slate-400: #d4dae8;
   --color-slate-500: #e0e6f0;
   --color-slate-600: #eef2fa;
   --color-slate-700: #f5f7fc;
-  /* Dark slate values → bright text (used as text-slate-800/900 headings) */
-  --color-slate-800: #f8faff;
-  --color-slate-900: #ffffff;
-  --color-slate-950: #ffffff;
+  /* Dark → keep dark for backgrounds (bg-slate-800/900/950 hero sections) */
+  --color-slate-800: #1a1f2c;
+  --color-slate-900: #111318;
+  --color-slate-950: #0a0d12;
   
-  /* Gray palette → bright text too */
-  --color-gray-500: #d4dae8;
+  /* Gray palette → bright text */
+  --color-gray-500: #e0e6f0;
   --color-gray-600: #eef2fa;
   --color-gray-700: #f5f7fc;
   --color-gray-800: #f8faff;
   --color-gray-900: #ffffff;
   
   /* Zinc palette → bright text */
-  --color-zinc-500: #d4dae8;
+  --color-zinc-500: #e0e6f0;
   --color-zinc-900: #ffffff;
 }
 

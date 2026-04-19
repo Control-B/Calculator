@@ -94,7 +94,7 @@ export function AIBar({
           <button
             onClick={() => handleSubmit(query)}
             disabled={!query.trim() || loading}
-            className="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-zinc-900 hover:bg-zinc-100 disabled:opacity-30 transition-all shrink-0 shadow-sm"
+            className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-30 transition-all shrink-0 shadow-sm"
           >
             <ArrowUp className="h-4 w-4" />
           </button>

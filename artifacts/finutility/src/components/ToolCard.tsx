@@ -40,7 +40,7 @@ export function ToolCard({ title, description, href, icon, backgroundImage, titl
             </div>
           </div>
           <div className="p-6 flex flex-col grow">
-            <p className="text-base text-slate-800 grow mb-6 leading-relaxed">{description}</p>
+            <p className="text-base text-muted-foreground grow mb-6 leading-relaxed">{description}</p>
             <div className="flex items-center text-base font-semibold text-primary mt-auto">
               Try it free <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-2" />
             </div>

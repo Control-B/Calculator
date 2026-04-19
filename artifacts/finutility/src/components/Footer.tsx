@@ -56,7 +56,7 @@ export function Footer() {
           <p className="text-sm text-slate-400 mb-4">
             © {new Date().getFullYear()} FinUtility AI. All rights reserved.
           </p>
-          <p className="text-xs text-slate-500 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xs text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Disclaimer: The calculators and information provided on FinUtility AI are for educational and informational purposes only. They do not constitute financial, legal, or tax advice. FinUtility AI is not responsible for any financial decisions made based on these calculations. Always consult with a qualified professional before making significant financial commitments.
           </p>
         </div>

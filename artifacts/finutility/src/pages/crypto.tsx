@@ -125,9 +125,9 @@ export default function CryptoCategory() {
         </div>
 
         {/* Tool Cards */}
-        <section className="bg-white py-20">
+        <section className="bg-background py-20">
           <div className="container mx-auto px-4 md:px-8">
-            <h2 className="text-3xl font-black text-slate-900 mb-8">Essential Crypto Tools</h2>
+            <h2 className="text-3xl font-black text-foreground mb-8">Essential Crypto Tools</h2>
             <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <motion.div variants={itemVariants}>
                 <ToolCard title="Crypto Profit Calculator" description="Calculate your net profit, ROI, and break-even price for your crypto trades." href="/crypto-profit-calculator" icon={<Bitcoin className="h-7 w-7" />} backgroundImage={toolCrypto} titleGradient="from-fuchsia-300 to-violet-300" />

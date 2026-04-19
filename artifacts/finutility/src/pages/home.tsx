@@ -138,19 +138,19 @@ export default function HomePage() {
 
                 <div className="relative max-w-xl mb-6 group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                  <form onSubmit={handleSearch} className="relative flex items-center bg-white rounded-full p-2 shadow-xl">
-                    <Search className="absolute left-5 h-6 w-6 text-slate-400" />
+                  <form onSubmit={handleSearch} className="relative flex items-center bg-card border border-border rounded-full p-2 shadow-xl">
+                    <Search className="absolute left-5 h-6 w-6 text-muted-foreground" />
                     <Input
                       type="text"
                       placeholder="e.g. mortgage on 500k at 6.5%"
-                      className="h-14 pl-14 pr-36 text-lg rounded-full border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-slate-900 placeholder:text-slate-400"
+                      className="h-14 pl-14 pr-36 text-lg rounded-full border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-foreground placeholder:text-muted-foreground"
                       value={query}
                       onChange={(e) => setQuery(e.target.value)}
                       data-testid="input-hero-search"
                     />
                     <Button 
                       type="submit" 
-                      className="absolute right-2 h-12 rounded-full px-8 font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-md transition-all hover:shadow-lg"
+                      className="absolute right-2 h-12 rounded-full px-8 font-bold bg-primary hover:bg-primary/90 text-primary-foreground shadow-md transition-all hover:shadow-lg"
                       data-testid="btn-hero-calculate"
                     >
                       Calculate
@@ -228,7 +228,7 @@ export default function HomePage() {
         />
 
         {/* Section 2: Trust Strip */}
-        <section className="bg-slate-50 border-b border-slate-200 py-6">
+        <section className="bg-card border-b border-border py-6">
           <div className="container mx-auto px-4 md:px-8">
             <motion.div 
               variants={containerVariants}
@@ -238,38 +238,38 @@ export default function HomePage() {
               className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
             >
               <motion.div variants={itemVariants}>
-                <div className="text-3xl md:text-4xl font-black text-slate-900 mb-2">500k+</div>
-                <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">Calculations Run</div>
+                <div className="text-3xl md:text-4xl font-black text-foreground mb-2">500k+</div>
+                <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Calculations Run</div>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <div className="text-3xl md:text-4xl font-black text-slate-900 mb-2">98%</div>
-                <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">User Satisfaction</div>
+                <div className="text-3xl md:text-4xl font-black text-foreground mb-2">98%</div>
+                <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">User Satisfaction</div>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <div className="text-3xl md:text-4xl font-black text-slate-900 mb-2">$2.3B+</div>
-                <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">Calculated</div>
+                <div className="text-3xl md:text-4xl font-black text-foreground mb-2">$2.3B+</div>
+                <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Calculated</div>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <div className="text-3xl md:text-4xl font-black text-slate-900 mb-2">100%</div>
-                <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">Free Forever</div>
+                <div className="text-3xl md:text-4xl font-black text-foreground mb-2">100%</div>
+                <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Free Forever</div>
               </motion.div>
             </motion.div>
           </div>
         </section>
 
         {/* Ad above Featured Calculators */}
-        <div className="bg-white px-4 pt-4 pb-0">
+        <div className="bg-background px-4 pt-4 pb-0">
           <div className="container mx-auto px-4 md:px-8">
             <AdPlaceholder />
           </div>
         </div>
 
         {/* Section 3: Featured Calculators */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-background">
           <div className="container mx-auto px-4 md:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-black text-slate-900 mb-4">The Financial Tools You Need</h2>
-              <p className="text-lg text-slate-500 max-w-2xl mx-auto">Powerful, precise calculators designed to give you clarity on your financial journey.</p>
+              <h2 className="text-4xl font-black text-foreground mb-4">The Financial Tools You Need</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Powerful, precise calculators designed to give you clarity on your financial journey.</p>
             </div>
             
             <motion.div 
@@ -385,11 +385,11 @@ export default function HomePage() {
         </section>
 
         {/* Section 5: How It Works */}
-        <section className="py-24 bg-slate-50 overflow-hidden">
+        <section className="py-24 bg-card overflow-hidden">
           <div className="container mx-auto px-4 md:px-8">
             <div className="text-center mb-20">
-              <h2 className="text-4xl font-black text-slate-900 mb-4">Smarter Calculations, Simplified</h2>
-              <p className="text-lg text-slate-500 max-w-2xl mx-auto">We've removed the complexity from financial planning so you can focus on making the right decisions.</p>
+              <h2 className="text-4xl font-black text-foreground mb-4">Smarter Calculations, Simplified</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{"We've removed the complexity from financial planning so you can focus on making the right decisions."}</p>
             </div>
 
             <div className="space-y-24">
@@ -402,12 +402,12 @@ export default function HomePage() {
                 className="flex flex-col md:flex-row items-center gap-12 lg:gap-20"
               >
                 <div className="w-full md:w-1/2 order-2 md:order-1">
-                  <div className="h-12 w-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">1</div>
-                  <h3 className="text-3xl font-bold text-slate-900 mb-4">Ask in plain English</h3>
-                  <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                    Don't worry about finding the right form fields. Just type your scenario into our search bar exactly as you would say it out loud.
+                  <div className="h-12 w-12 bg-primary/20 text-primary rounded-xl flex items-center justify-center text-xl font-bold mb-6">1</div>
+                  <h3 className="text-3xl font-bold text-foreground mb-4">Ask in plain English</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                    {"Don't worry about finding the right form fields. Just type your scenario into our search bar exactly as you would say it out loud."}
                   </p>
-                  <ul className="space-y-3 text-slate-600">
+                  <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
                       <span>Natural language processing understands intent</span>
@@ -444,12 +444,12 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="w-full md:w-1/2">
-                  <div className="h-12 w-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">2</div>
-                  <h3 className="text-3xl font-bold text-slate-900 mb-4">Get precise, visual results</h3>
-                  <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                  <div className="h-12 w-12 bg-primary/20 text-primary rounded-xl flex items-center justify-center text-xl font-bold mb-6">2</div>
+                  <h3 className="text-3xl font-bold text-foreground mb-4">Get precise, visual results</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                     See exactly where your money goes. Interactive charts and detailed amortization tables make complex math easy to understand at a glance.
                   </p>
-                  <ul className="space-y-3 text-slate-600">
+                  <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
                       <span>Interactive, responsive data visualizations</span>
@@ -475,12 +475,12 @@ export default function HomePage() {
                 className="flex flex-col md:flex-row items-center gap-12 lg:gap-20"
               >
                 <div className="w-full md:w-1/2 order-2 md:order-1">
-                  <div className="h-12 w-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">3</div>
-                  <h3 className="text-3xl font-bold text-slate-900 mb-4">Understand with Financial Insights</h3>
-                  <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                    Raw numbers aren't enough. Our AI analyzes your specific calculation to provide contextual advice, highlighting risks and opportunities.
+                  <div className="h-12 w-12 bg-primary/20 text-primary rounded-xl flex items-center justify-center text-xl font-bold mb-6">3</div>
+                  <h3 className="text-3xl font-bold text-foreground mb-4">Understand with Financial Insights</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                    {"Raw numbers aren't enough. Our AI analyzes your specific calculation to provide contextual advice, highlighting risks and opportunities."}
                   </p>
-                  <ul className="space-y-3 text-slate-600">
+                  <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
                       <span>Personalized analysis of your results</span>
@@ -507,19 +507,19 @@ export default function HomePage() {
         </section>
 
         {/* Ad above Explore Categories */}
-        <div className="bg-white px-4 pt-10 pb-0">
+        <div className="bg-background px-4 pt-10 pb-0">
           <div className="container mx-auto px-4 md:px-8">
             <AdPlaceholder />
           </div>
         </div>
 
         {/* Section 5: Category Explorer */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-background">
           <div className="container mx-auto px-4 md:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
               <div>
-                <h2 className="text-4xl font-black text-slate-900 mb-4">Explore Categories</h2>
-                <p className="text-lg text-slate-500 max-w-xl">Find the exact tool you need organized by financial domain.</p>
+                <h2 className="text-4xl font-black text-foreground mb-4">Explore Categories</h2>
+                <p className="text-lg text-muted-foreground max-w-xl">Find the exact tool you need organized by financial domain.</p>
               </div>
               <Button variant="outline" className="hidden md:flex font-semibold" asChild>
                 <a href="/finance">View All Tools <ArrowRight className="ml-2 h-4 w-4" /></a>
