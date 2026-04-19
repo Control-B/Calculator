@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { useLocation } from "wouter";
-import { Search, Home, Briefcase, Bitcoin, PiggyBank, DollarSign, TrendingUp, CheckCircle2, ArrowRight } from "lucide-react";
+import { Search, Home, Briefcase, Bitcoin, PiggyBank, DollarSign, TrendingUp, CheckCircle2, ArrowRight, Car } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Navbar } from "@/components/Navbar";
@@ -160,14 +160,17 @@ export default function HomePage() {
 
                 <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
                   <span className="font-medium">Try:</span>
-                  <button onClick={() => setExampleQuery("mortgage on 500000 with 20% down at 6.5%")} className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                    🏠 Mortgage
+                  <button onClick={() => setExampleQuery("mortgage on 500000 with 20% down at 6.5%")} className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-500/50 transition-all">
+                    <Home className="h-4 w-4 text-blue-400" />
+                    <span>Mortgage</span>
                   </button>
-                  <button onClick={() => setExampleQuery("compound interest on 10000 at 5% for 10 years")} className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                    📈 Compound Interest
+                  <button onClick={() => setExampleQuery("compound interest on 10000 at 5% for 10 years")} className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-emerald-500/50 transition-all">
+                    <TrendingUp className="h-4 w-4 text-emerald-400" />
+                    <span>Compound Interest</span>
                   </button>
-                  <button onClick={() => setExampleQuery("loan of 25000 at 7% for 60 months")} className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                    🚗 Auto Loan
+                  <button onClick={() => setExampleQuery("loan of 25000 at 7% for 60 months")} className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-orange-500/50 transition-all">
+                    <Car className="h-4 w-4 text-orange-400" />
+                    <span>Auto Loan</span>
                   </button>
                 </div>
               </motion.div>
