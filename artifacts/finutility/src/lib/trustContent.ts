@@ -22,7 +22,7 @@ export const homeTrustContent: TrustContentEntry = {
   heading: "Why the homepage focuses on privacy, education, and practical use",
   intro:
     "Freetawn is designed to help visitors move from a broad financial question to a useful tool or guide without creating account friction, exaggerated promises, or confusion about what the site can and cannot do.",
-  surface: "light",
+  surface: "dark",
   accent: "blue",
   items: [
     {
