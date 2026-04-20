@@ -4,15 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
-/** Dev/preview listening port. CI `vite build` does not need a real port; Replit dev expects PORT. */
+/** Dev/preview listening port. CI `vite build` does not need a real port. */
 function resolveListeningPort(): number {
   const rawPort = process.env.PORT;
   if (!rawPort) {
-    if (process.env.REPL_ID !== undefined) {
-      throw new Error(
-        "PORT environment variable is required but was not provided.",
-      );
-    }
     return 5173;
   }
   const port = Number(rawPort);
