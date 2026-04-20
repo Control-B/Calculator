@@ -13,7 +13,6 @@ import { CategoryCard } from "@/components/CategoryCard";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { parseNaturalLanguage } from "@/lib/nlParser";
 import { motion, type Variants } from "framer-motion";
-import heroBackground from "@assets/Landing7.jpeg";
 import heroDashboard from "@assets/Landing62.jpeg";
 import step1Image from "@assets/Landing47.jpeg";
 import step2Image from "@assets/Landing66.jpeg";
@@ -114,8 +113,8 @@ export default function HomePage() {
         {/* Section 1: Hero */}
         <section className="relative overflow-hidden bg-slate-950 pt-24 pb-32">
           <div className="absolute inset-0 z-0">
-            <img src={heroBackground} alt="" className="w-full h-full object-cover object-center" />
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-blue-950/80 to-slate-900/85"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.28),_transparent_34%),radial-gradient(circle_at_80%_20%,_rgba(37,99,235,0.24),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(14,116,144,0.18),_transparent_36%)]"></div>
           </div>
           
           <div className="container mx-auto px-4 md:px-8 relative z-10">
