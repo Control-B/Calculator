@@ -2,6 +2,7 @@ import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { SeoManager } from "@/components/SeoManager";
 import NotFound from "@/pages/not-found";
 
 import HomePage from "@/pages/home";
@@ -18,6 +19,7 @@ import SavingsGoalCalculator from "@/pages/savings-goal";
 
 import NewsPage from "@/pages/news";
 import ArticlePage from "@/pages/article";
+import GuidesPage from "@/pages/guides";
 import LegalPage from "@/pages/legal";
 import ContactPage from "@/pages/contact";
 
@@ -41,6 +43,7 @@ function Router() {
       <Route path="/savings-goal-calculator" component={SavingsGoalCalculator} />
       
       <Route path="/news" component={NewsPage} />
+      <Route path="/guides" component={GuidesPage} />
 
       {/* Educational Articles (reusing a generic article template for MVP) */}
       <Route path="/what-is-compound-interest" component={ArticlePage} />
@@ -52,6 +55,7 @@ function Router() {
       <Route path="/crypto-profit-vs-loss-explained" component={ArticlePage} />
       <Route path="/how-currency-conversion-works" component={ArticlePage} />
       <Route path="/what-affects-exchange-rates" component={ArticlePage} />
+      <Route path="/how-to-pay-off-debt-faster" component={ArticlePage} />
 
       {/* Legal & Info */}
       <Route path="/privacy-policy" component={LegalPage} />
@@ -70,6 +74,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <SeoManager />
           <Router />
         </WouterRouter>
         <Toaster />

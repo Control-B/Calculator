@@ -36,10 +36,12 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-white mb-6 uppercase tracking-wider text-sm">Learn</h3>
             <ul className="space-y-3 text-sm text-slate-400">
+              <li><Link href="/guides" className="hover:text-primary hover:translate-x-1 inline-block transition-all">All Guides</Link></li>
               <li><Link href="/what-is-compound-interest" className="hover:text-primary hover:translate-x-1 inline-block transition-all">What is Compound Interest?</Link></li>
               <li><Link href="/how-to-calculate-mortgage-payments" className="hover:text-primary hover:translate-x-1 inline-block transition-all">Mortgage Guide</Link></li>
               <li><Link href="/crypto-profit-vs-loss-explained" className="hover:text-primary hover:translate-x-1 inline-block transition-all">Crypto Profit vs Loss</Link></li>
               <li><Link href="/what-affects-exchange-rates" className="hover:text-primary hover:translate-x-1 inline-block transition-all">Exchange Rates Explained</Link></li>
+              <li><Link href="/how-to-pay-off-debt-faster" className="hover:text-primary hover:translate-x-1 inline-block transition-all">Pay Off Debt Faster</Link></li>
             </ul>
           </div>
 

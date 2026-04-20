@@ -251,6 +251,69 @@ export default function HomePage() {
           ]}
         />
 
+        <section className="bg-white border-b border-slate-200 py-16">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start">
+              <div>
+                <div className="text-xs font-bold uppercase tracking-[0.22em] text-blue-600 mb-4">
+                  Smart Financial Tools & Guides
+                </div>
+                <h2 className="text-4xl font-black text-slate-900 mb-6">
+                  Free calculators backed by practical financial education.
+                </h2>
+                <div className="space-y-5 text-slate-600 leading-8 text-lg max-w-3xl">
+                  <p>
+                    freetawn combines fast financial calculators with plain-English guides so users can do more than generate a number. Whether you are estimating a mortgage payment, testing a compound-interest scenario, planning a savings target, or reviewing a crypto trade, the goal is to help you understand the decision behind the math.
+                  </p>
+                  <p>
+                    The platform covers core personal finance categories including savings, loans, home buying, currency conversion, and crypto profit analysis. Every tool is designed to be simple enough for beginners while still useful for comparing real-world scenarios with different assumptions, timelines, and contribution levels.
+                  </p>
+                  <p>
+                    Calculators are most valuable when they are paired with context. That is why freetawn also includes educational guides, FAQs, related tools, and practical tips that help users avoid common financial mistakes and make more confident decisions.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid gap-6">
+                <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+                  <h3 className="text-lg font-black text-slate-900 mb-4">Featured Calculators</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                    {[
+                      ["Compound Interest", "/compound-interest-calculator"],
+                      ["Mortgage Calculator", "/mortgage-calculator"],
+                      ["Loan Payment", "/loan-payment-calculator"],
+                      ["Savings Goal", "/savings-goal-calculator"],
+                    ].map(([label, href]) => (
+                      <a key={href} href={href} className="rounded-2xl border border-slate-200 bg-white px-4 py-3 font-semibold text-slate-700 transition-all hover:border-blue-300 hover:text-blue-700 hover:shadow-sm">
+                        {label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+                  <h3 className="text-lg font-black text-slate-900 mb-4">Featured Guides</h3>
+                  <div className="grid grid-cols-1 gap-3 text-sm">
+                    {[
+                      ["What Is Compound Interest?", "/what-is-compound-interest"],
+                      ["How To Calculate Mortgage Payments", "/how-to-calculate-mortgage-payments"],
+                      ["How To Pay Off Debt Faster", "/how-to-pay-off-debt-faster"],
+                      ["How Currency Conversion Works", "/how-currency-conversion-works"],
+                    ].map(([label, href]) => (
+                      <a key={href} href={href} className="rounded-2xl border border-slate-200 bg-white px-4 py-3 font-semibold text-slate-700 transition-all hover:border-blue-300 hover:text-blue-700 hover:shadow-sm">
+                        {label}
+                      </a>
+                    ))}
+                  </div>
+                  <a href="/guides" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800">
+                    Browse all guides <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Section 2: Trust Strip */}
         <section className="bg-slate-50 border-b border-slate-200 py-6">
           <div className="container mx-auto px-4 md:px-8">
