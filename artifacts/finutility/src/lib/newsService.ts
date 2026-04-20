@@ -29,6 +29,8 @@ interface FeedConfig {
   category: NewsCategory;
 }
 
+type JsonRecord = Record<string, unknown>;
+
 /* ── Verified-working RSS feeds (Reuters dropped RSS in 2020 — excluded) ── */
 const FEEDS: FeedConfig[] = [
   // Markets
@@ -101,6 +103,65 @@ function stripHtml(html: string): string {
 
 function safeText(el: Element | null): string {
   return el?.textContent?.trim() ?? "";
+}
+
+function normalizeUrl(value: string): string {
+  const trimmed = value.trim();
+  if (!trimmed) return "";
+  if (trimmed.startsWith("//")) return `https:${trimmed}`;
+  return trimmed;
+}
+
+function extractImageFromHtml(html?: string): string {
+  if (!html) return "";
+
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  const image = doc.querySelector("img[src]");
+  return normalizeUrl(image?.getAttribute("src") ?? "");
+}
+
+function readImageCandidate(value: unknown): string {
+  if (!value) return "";
+
+  if (typeof value === "string") {
+    return normalizeUrl(value);
+  }
+
+  if (Array.isArray(value)) {
+    for (const entry of value) {
+      const candidate = readImageCandidate(entry);
+      if (candidate) return candidate;
+    }
+    return "";
+  }
+
+  if (typeof value === "object") {
+    const record = value as JsonRecord;
+
+    for (const key of ["url", "src", "href", "thumbnail"]) {
+      const candidate = record[key];
+      if (typeof candidate === "string") {
+        const normalized = normalizeUrl(candidate);
+        if (normalized) return normalized;
+      }
+    }
+  }
+
+  return "";
+}
+
+function getNewsImage(item: JsonRecord): string {
+  return (
+    readImageCandidate(item.enclosure) ||
+    readImageCandidate(item["media:content"]) ||
+    readImageCandidate(item["media:thumbnail"]) ||
+    readImageCandidate(item.thumbnail) ||
+    readImageCandidate(item.image) ||
+    extractImageFromHtml(typeof item["content:encoded"] === "string" ? item["content:encoded"] : undefined) ||
+    extractImageFromHtml(typeof item.content === "string" ? item.content : undefined) ||
+    extractImageFromHtml(typeof item.description === "string" ? item.description : undefined) ||
+    ""
+  );
 }
 
 /** Extract the best thumbnail from an RSS <item> element. */
@@ -183,11 +244,7 @@ async function viaRss2Json(config: FeedConfig): Promise<NewsItem[]> {
         stripHtml(
           String(item.description ?? item.content ?? "")
         ).slice(0, 160) + "…",
-      thumbnail:
-        String(item.thumbnail ?? "") ||
-        String(
-          (item.enclosure as Record<string, string> | null)?.thumbnail ?? ""
-        ),
+      thumbnail: getNewsImage(item),
       source: config.source,
       category: config.category,
     })
